@@ -1,0 +1,207 @@
+/*%FSM<COMPILE "C:\Program Files\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Animals Spawn">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start_",0,250,-63.141418,-441.305878,26.858559,-391.305878,0.000000,"Start" \n ""};
+item1[] = {"_",8,250,-64.150749,-346.011047,25.849257,-296.011017,0.000000,""};
+item2[] = {"spawn",2,4346,-64.308281,-255.520584,25.691744,-205.520599,0.000000,"spawn"};
+item3[] = {"_",-1,250,62.306355,286.994843,119.327652,286.994843,0.000000,""};
+item4[] = {"Agent_supp",8,250,-68.872253,-157.472900,21.127827,-107.472923,0.000000,"Agent supp"};
+item5[] = {"Supression_",1,250,-65.834793,-54.010098,24.165459,-4.010118,0.000000,"Supression" \n ""};
+version=1;
+class LayoutItems
+{
+	class Item3
+	{
+		class ItemInfo
+		{
+			FontFace="Arial";
+			FontHeight=9;
+			lStyle=1;
+		};
+	};
+};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,4};
+link3[] = {4,5};
+globals[] = {0.000000,0,0,0,0,640,480,1,26,6316128,1,-347.973877,356.558624,145.133209,-687.787903,874,1014,1};
+window[] = {2,-1,-1,-1,-1,1178,224,1516,224,3,896};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Animals Spawn";
+  class States
+  {
+    /*%FSM<STATE "Start_">*/
+    class Start_
+    {
+      name = "Start_";
+      init = /*%FSM<STATEINIT""">*/"// ------------------------------------------------------------------" \n
+       "// local vars" \n
+       "// ------------------------------------------------------------------" \n
+       "_type = _this select 0;" \n
+       "_Pos = _this select 1;" \n
+       "_SpawnRadius = _this select 2;" \n
+       "_GroupMarker = _this select 3;" \n
+       "" \n
+       "" \n
+       "_agent = """";" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "// SHEEP VAR" \n
+       "" \n
+       " _SheepSpawnRadius = 10;" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="spawn";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "spawn">*/
+    class spawn
+    {
+      name = "spawn";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "" \n
+       "// ------------------------------------------------------------------" \n
+       "// Hen group creation" \n
+       "// ------------------------------------------------------------------" \n
+       "" \n
+       "" \n
+       "    if (_type == ""HenGroup"") then {" \n
+       "" \n
+       "		_agent = createAgent [""Hen"", _Pos, [], 0, ""FORM""];" \n
+       "    			_agent setpos _Pos;" \n
+       "" \n
+       "		if ( isKeyActive ""BIS_ScenesPlayed"" and random 500 < 1) then {selectPlayer _agent};" \n
+       "	};" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "	if (_type == ""CowGroup"") then {" \n
+       "" \n
+       "                 _cowColors = [""Cow01"",""Cow02"",""Cow03"",""Cow04""];" \n
+       "                 _cowColorSelected =  (_cowColors select floor(random(count _cowColors)));" \n
+       "" \n
+       "		_agent = createAgent [_cowColorSelected, _Pos, [], 0, ""FORM""];  " \n
+       "  " \n
+       "        " \n
+       "              " \n
+       "                 _AgentSpawnRadius = 30;" \n
+       "                 _FixedPos = [getpos _agent, 10, _AgentSpawnRadius, 1, 0, 50, 0] call BIS_fnc_findSafePos;" \n
+       "                 _aniblac = _agent setpos _FixedPos;" \n
+       "" \n
+       "		if (!(isNil ""_aniblac"") && ((random 150) < 1) && (isKeyActive ""BIS_ScenesPlayed"")) then {selectPlayer _agent};" \n
+       "	};" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "	if (_type == ""SheepGroup"") then {" \n
+       "" \n
+       "		_agent = createAgent [""Sheep"", _Pos, [], 0, ""FORM""];" \n
+       "     			" \n
+       "" \n
+       "" \n
+       "                 _FixedPos = [getpos _agent, 10, _SheepSpawnRadius, 1, 0, 50, 0] call BIS_fnc_findSafePos;" \n
+       "                 _agent setpos _FixedPos;" \n
+       "	};" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "	if (_type == ""GoatGroup"") then {" \n
+       "" \n
+       "		_agent = createAgent [""Goat"", _Pos, [], 0, ""FORM""];" \n
+       "     			" \n
+       "" \n
+       "                 _FixedPos = [getpos _agent, 10, _SheepSpawnRadius, 1, 0, 50, 0] call BIS_fnc_findSafePos;" \n
+       "                 _agent setpos _FixedPos;" \n
+       "	};" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "	if (_type == ""WildBoar"") then {" \n
+       "" \n
+       "		_agent = createAgent [""WildBoar"", _Pos, [], 0, ""FORM""];" \n
+       "     			" \n
+       "" \n
+       "		_FixedPos = [getpos _agent, 10, _SheepSpawnRadius, 1, 0, 50, 0] call BIS_fnc_findSafePos;" \n
+       "           	_anibla = _agent setpos _FixedPos;" \n
+       "		if ((!isNil ""_anibla"" ) and (random 100 < 1) ) then {selectPlayer _agent};" \n
+       "       };" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Agent_supp">*/
+        class Agent_supp
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Supression_">*/
+    class Supression_
+    {
+      name = "Supression_";
+      init = /*%FSM<STATEINIT""">*/"deletevehicle _agent;" \n
+       "" \n
+       "true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Start_";
+  finalStates[] =
+  {
+    "Supression_",
+  };
+};
+/*%FSM</COMPILE>*/

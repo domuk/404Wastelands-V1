@@ -1,0 +1,468 @@
+/*%FSM<COMPILE "C:\Program Files\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Delete Group">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"Start_",0,250,-63.141418,-441.305878,26.858559,-391.305878,0.000000,"Start" \n ""};
+item1[] = {"_",-1,250,186.924744,411.613251,243.946045,411.613251,0.000000,""};
+item2[] = {"_",4,218,-62.723869,-78.873184,27.276131,-28.873154,0.000000,""};
+item3[] = {"Supression_",1,250,-64.184158,383.655487,25.816082,433.655365,0.000000,"Supression" \n ""};
+item4[] = {"continue",2,250,-64.071236,7.398041,25.928780,57.398041,0.000000,"continue"};
+item5[] = {"sheep",4,218,-65.300644,110.871719,24.699409,160.871719,0.000000,"sheep"};
+item6[] = {"cow",4,218,63.815529,107.182693,153.815506,157.182693,0.000000,"cow"};
+item7[] = {"hen",4,218,188.012909,107.182693,278.013000,157.182693,0.000000,"hen"};
+item8[] = {"__1",2,250,-67.760025,206.786575,22.240074,256.786560,0.000000,""};
+item9[] = {"__2",2,250,61.356163,208.016220,151.356155,258.016235,0.000000,""};
+item10[] = {"__3",2,250,188.012909,206.786545,278.013000,256.786560,0.000000,""};
+item11[] = {"_",8,218,-64.879929,306.209625,25.120052,356.209625,0.000000,""};
+item12[] = {"sheep",4,218,-59.997742,-304.549927,30.002312,-254.549911,0.000000,"sheep"};
+item13[] = {"cow",4,218,69.118401,-308.238953,159.118393,-258.238953,0.000000,"cow"};
+item14[] = {"hen",4,218,193.315796,-308.238953,283.315796,-258.238953,0.000000,"hen"};
+item15[] = {"__4",2,250,-62.457092,-208.635025,27.542961,-158.635056,0.000000,""};
+item16[] = {"__5",2,250,66.659050,-207.405380,156.659042,-157.405380,0.000000,""};
+item17[] = {"__6",2,250,193.315796,-208.635056,283.315796,-158.635056,0.000000,""};
+item18[] = {"wildboar",4,218,-304.404419,-304.549927,-214.404526,-254.549911,0.000000,"wildboar"};
+item19[] = {"__7",2,250,-303.355591,-209.804443,-213.355637,-159.804474,0.000000,""};
+item20[] = {"wildboar",4,218,-300.352051,113.210548,-210.352173,163.210526,0.000000,"wildboar"};
+item21[] = {"__8",2,250,-302.811462,209.125381,-212.811523,259.125427,0.000000,""};
+item22[] = {"goat",4,218,-176.938690,-302.211121,-86.938751,-252.211090,0.000000,"goat"};
+item23[] = {"__9",2,4346,-175.889862,-207.465622,-85.889862,-157.465652,0.000000,""};
+item24[] = {"goat",4,218,-182.785751,115.268517,-92.785812,165.268539,0.000000,"goat"};
+item25[] = {"__10",2,250,-181.736923,210.014008,-91.736923,260.013916,0.000000,""};
+version=1;
+class LayoutItems
+{
+	class Item1
+	{
+		class ItemInfo
+		{
+			FontFace="Arial";
+			FontHeight=9;
+			lStyle=1;
+		};
+	};
+};
+link0[] = {0,12};
+link1[] = {0,13};
+link2[] = {0,14};
+link3[] = {0,18};
+link4[] = {0,22};
+link5[] = {2,4};
+link6[] = {4,5};
+link7[] = {4,6};
+link8[] = {4,7};
+link9[] = {4,20};
+link10[] = {4,24};
+link11[] = {5,8};
+link12[] = {6,9};
+link13[] = {7,10};
+link14[] = {8,11};
+link15[] = {9,11};
+link16[] = {10,11};
+link17[] = {11,3};
+link18[] = {12,15};
+link19[] = {13,16};
+link20[] = {14,17};
+link21[] = {15,2};
+link22[] = {16,2};
+link23[] = {17,2};
+link24[] = {18,19};
+link25[] = {19,2};
+link26[] = {20,21};
+link27[] = {21,11};
+link28[] = {22,23};
+link29[] = {23,2};
+link30[] = {24,25};
+link31[] = {25,11};
+globals[] = {0.000000,0,0,0,0,640,480,1,52,6316128,1,-498.748108,507.333038,292.494751,-800.578369,794,1014,1};
+window[] = {2,-1,-1,-1,-1,1178,224,1516,224,3,816};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Delete Group";
+  class States
+  {
+    /*%FSM<STATE "Start_">*/
+    class Start_
+    {
+      name = "Start_";
+      init = /*%FSM<STATEINIT""">*/"" \n
+       "" \n
+       "" \n
+       "// ------------------------------------------------------------------" \n
+       "// local vars" \n
+       "// ------------------------------------------------------------------" \n
+       "_GroupMarker = _this select 0;" \n
+       "_SpawnRadius = _this select 1;" \n
+       "_type = _this select 2;" \n
+       "" \n
+       "" \n
+       "" \n
+       " BIS_AnimalsGroupInArea = BIS_AnimalsGroupInArea + 1;" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "cow">*/
+        class cow
+        {
+          priority = 0.000000;
+          to="__5";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""CowGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "hen">*/
+        class hen
+        {
+          priority = 0.000000;
+          to="__6";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""HenGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "wildboar">*/
+        class wildboar
+        {
+          priority = 0.000000;
+          to="__7";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""WildBoar"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "goat">*/
+        class goat
+        {
+          priority = 0.000000;
+          to="__9";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""GoatGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "sheep">*/
+        class sheep
+        {
+          priority = 0.000000;
+          to="__4";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""SheepGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Supression_">*/
+    class Supression_
+    {
+      name = "Supression_";
+      init = /*%FSM<STATEINIT""">*/"deletemarker _GroupMarker;" \n
+       "" \n
+       "" \n
+       "BIS_AnimalsGroupInArea = BIS_AnimalsGroupInArea - 1;" \n
+       "" \n
+       "" \n
+       "true"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "continue">*/
+    class continue
+    {
+      name = "continue";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "cow">*/
+        class cow
+        {
+          priority = 0.000000;
+          to="__2";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""CowGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "hen">*/
+        class hen
+        {
+          priority = 0.000000;
+          to="__3";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""HenGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "wildboar">*/
+        class wildboar
+        {
+          priority = 0.000000;
+          to="__8";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""WildBoar"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "goat">*/
+        class goat
+        {
+          priority = 0.000000;
+          to="__10";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""GoatGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "sheep">*/
+        class sheep
+        {
+          priority = 0.000000;
+          to="__1";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_type == ""SheepGroup"");"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__1">*/
+    class __1
+    {
+      name = "__1";
+      init = /*%FSM<STATEINIT""">*/"BIS_SheepGroupInArea = BIS_SheepGroupInArea - 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__2">*/
+    class __2
+    {
+      name = "__2";
+      init = /*%FSM<STATEINIT""">*/"BIS_CowGroupInArea = BIS_CowGroupInArea - 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__3">*/
+    class __3
+    {
+      name = "__3";
+      init = /*%FSM<STATEINIT""">*/"BIS_HenGroupInArea = BIS_HenGroupInArea - 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__4">*/
+    class __4
+    {
+      name = "__4";
+      init = /*%FSM<STATEINIT""">*/"BIS_SheepGroupInArea = BIS_SheepGroupInArea + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__5">*/
+    class __5
+    {
+      name = "__5";
+      init = /*%FSM<STATEINIT""">*/"BIS_CowGroupInArea = BIS_CowGroupInArea + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__6">*/
+    class __6
+    {
+      name = "__6";
+      init = /*%FSM<STATEINIT""">*/"BIS_HenGroupInArea = BIS_HenGroupInArea + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__7">*/
+    class __7
+    {
+      name = "__7";
+      init = /*%FSM<STATEINIT""">*/"BIS_WillboarInArea = BIS_WillboarInArea + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__8">*/
+    class __8
+    {
+      name = "__8";
+      init = /*%FSM<STATEINIT""">*/"BIS_WillboarInArea = BIS_WillboarInArea - 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__9">*/
+    class __9
+    {
+      name = "__9";
+      init = /*%FSM<STATEINIT""">*/"BIS_GoatInArea = BIS_GoatInArea + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="continue";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"({_x distance (getmarkerpos _GroupMarker) < _SpawnRadius} count ([] call BIS_fnc_listPlayers) == 0) || (surfaceIsWater (getmarkerpos _GroupMarker));" \n
+           "" \n
+           ""/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "__10">*/
+    class __10
+    {
+      name = "__10";
+      init = /*%FSM<STATEINIT""">*/"BIS_GoatInArea = BIS_GoatInArea - 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "_">*/
+        class _
+        {
+          priority = 0.000000;
+          to="Supression_";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="Start_";
+  finalStates[] =
+  {
+    "Supression_",
+  };
+};
+/*%FSM</COMPILE>*/

@@ -1,0 +1,1 @@
+//timeJump = (_this select 0)/60;while {true} do {sleep 160; skipTime timeJump;}

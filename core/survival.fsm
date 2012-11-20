@@ -1,0 +1,363 @@
+/*%FSM<COMPILE "E:\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Survival Sys">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,4346,3.786030,-160.296844,93.786041,-110.296890,0.000000,"init"};
+item1[] = {"true",8,218,4.691582,-92.611221,94.691574,-42.611294,0.000000,"true"};
+item2[] = {"Monitor",2,250,4.678034,-17.359074,94.677994,32.640930,0.000000,"Monitor"};
+item3[] = {"isWalking",4,218,-213.947556,68.953362,-123.947563,118.953362,0.000000,"isWalking"};
+item4[] = {"Monitor_walking",2,250,-361.463104,68.075294,-271.463074,118.075310,0.000000,"Monitor walking"};
+item5[] = {"__km",4,218,-361.462891,156.760269,-271.463196,206.760620,0.000000,"1km"};
+item6[] = {"Increase__dehydr",2,250,-214.467133,155.882004,-124.467117,205.882004,0.000000,"Increase " \n "dehydration"};
+item7[] = {"",7,210,-319.837341,32.076244,-311.837341,40.076237,0.000000,""};
+item8[] = {"",7,210,-172.589233,32.004379,-164.589233,40.004375,0.000000,""};
+item9[] = {"Monitor_Hydratio",4,218,4.171848,90.905098,94.171844,140.905090,0.000000,"Monitor" \n "Hydration"};
+item10[] = {"Dehydrate__playe",2,250,3.293781,170.809357,93.293793,220.809357,0.000000,"Dehydrate " \n "player"};
+item11[] = {"",7,210,-44.121944,191.004929,-36.121944,199.004929,0.000000,""};
+item12[] = {"",7,210,-44.000385,112.590157,-36.000385,120.590157,0.000000,""};
+item13[] = {"Check_Thirsk",4,218,127.101486,170.809311,217.101471,220.809479,1.000000,"Check" \n "Thirsk"};
+item14[] = {"Warn_player_of_H",2,250,126.223396,91.783066,216.223434,141.783051,0.000000,"Warn player" \n "of Hydration"};
+item15[] = {"Monitor_Hunger",4,218,339.594147,-17.097387,429.594147,32.902626,0.000000,"Monitor" \n "Hunger"};
+item16[] = {"Make_player_hung",2,250,340.472198,75.977875,430.472229,125.977867,0.000000,"Make player" \n "hungry"};
+item17[] = {"Critical_Dehydra",4,218,4.171841,248.957458,94.171844,298.957458,2.000000,"Critical" \n "Dehydration"};
+item18[] = {"Kill_from_dehydr",2,250,2.421032,326.234619,92.421066,376.234619,0.000000,"Kill from" \n "dehydration"};
+item19[] = {"",7,210,463.401794,97.051575,471.401794,105.051567,0.000000,""};
+item20[] = {"",7,210,463.132629,3.024554,471.132629,11.024555,0.000000,""};
+item21[] = {"Check_Hunger",4,218,341.350281,155.882187,431.350281,205.882187,0.000000,"Check" \n "Hunger"};
+item22[] = {"notify_hunger",2,250,342.228333,232.274170,432.228333,282.274170,0.000000,"notify hunger"};
+item23[] = {"",7,210,463.401825,252.469757,471.401825,260.469727,0.000000,""};
+item24[] = {"Critical_Hunger",4,218,343.106415,314.812653,433.106415,364.812653,0.000000,"Critical" \n "Hunger"};
+item25[] = {"Kill_from_hunger",2,250,220.157288,316.563477,310.157410,366.563477,0.000000,"Kill from" \n "hunger"};
+link0[] = {0,1};
+link1[] = {1,2};
+link2[] = {2,3};
+link3[] = {2,9};
+link4[] = {2,15};
+link5[] = {3,4};
+link6[] = {4,5};
+link7[] = {4,7};
+link8[] = {5,6};
+link9[] = {6,3};
+link10[] = {7,8};
+link11[] = {8,3};
+link12[] = {9,10};
+link13[] = {10,11};
+link14[] = {10,13};
+link15[] = {10,17};
+link16[] = {11,12};
+link17[] = {12,9};
+link18[] = {13,14};
+link19[] = {14,9};
+link20[] = {15,16};
+link21[] = {16,19};
+link22[] = {16,21};
+link23[] = {17,18};
+link24[] = {19,20};
+link25[] = {20,15};
+link26[] = {21,22};
+link27[] = {22,23};
+link28[] = {22,24};
+link29[] = {23,19};
+link30[] = {24,25};
+globals[] = {0.000000,0,0,0,0,640,480,1,29,6316128,1,-406.894775,490.430359,436.720154,-261.686218,1024,797,1};
+window[] = {0,-1,-1,-32000,-32000,1042,100,1826,100,1,1042};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Survival Sys";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"_MaxWalk = 20;" \n
+       "_walkDis = 0;" \n
+       "" \n
+       "hungerLevel = 100;" \n
+       "thirstLevel = 100;" \n
+       "" \n
+       "_runDehydrate = 25;" \n
+       "_runHunger = 5;" \n
+       "" \n
+       "_thirstTime = 30;" \n
+       "_hungerTime = 60;" \n
+       "" \n
+       "_thirstCheck = time;" \n
+       "_hungerCheck = time;" \n
+       "" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Monitor";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Monitor">*/
+    class Monitor
+    {
+      name = "Monitor";
+      init = /*%FSM<STATEINIT""">*/"diag_log(""Survival System: Starting to monitor stuff..."");" \n
+       "" \n
+       "hint ""Survival initialized"";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Monitor_Hydratio">*/
+        class Monitor_Hydratio
+        {
+          priority = 0.000000;
+          to="Dehydrate__playe";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_thirstCheck - time) > _thirstTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Monitor_Hunger">*/
+        class Monitor_Hunger
+        {
+          priority = 0.000000;
+          to="Make_player_hung";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_hungerCheck - time) > _hungerTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "isWalking">*/
+        class isWalking
+        {
+          priority = 0.000000;
+          to="Monitor_walking";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isWalking player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Monitor_walking">*/
+    class Monitor_walking
+    {
+      name = "Monitor_walking";
+      init = /*%FSM<STATEINIT""">*/"_walkDis = _walkDis + 1;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isWalking">*/
+        class isWalking
+        {
+          priority = 0.000000;
+          to="Monitor_walking";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isWalking player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "__km">*/
+        class __km
+        {
+          priority = 0.000000;
+          to="Increase__dehydr";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(_walkDis == _MaxWalk)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Increase__dehydr">*/
+    class Increase__dehydr
+    {
+      name = "Increase__dehydr";
+      init = /*%FSM<STATEINIT""">*/"_walkDis = 0;" \n
+       "" \n
+       "thirstLevel = (thirstLeve)-(_runDehydrate);" \n
+       "hungerLevel = (hungerLevel)-(_runHunger);"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "isWalking">*/
+        class isWalking
+        {
+          priority = 0.000000;
+          to="Monitor_walking";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(isWalking player)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Dehydrate__playe">*/
+    class Dehydrate__playe
+    {
+      name = "Dehydrate__playe";
+      init = /*%FSM<STATEINIT""">*/"thirstLevel = (thirstLevel)-10;" \n
+       "" \n
+       "_thirstCheck = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Critical_Dehydra">*/
+        class Critical_Dehydra
+        {
+          priority = 2.000000;
+          to="Kill_from_dehydr";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(thirstLevel < 1.5)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Check_Thirsk">*/
+        class Check_Thirsk
+        {
+          priority = 1.000000;
+          to="Warn_player_of_H";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(round(thirstLevel) < 40) OR (round(thirstLevel) < 25) OR (round(thirstLevel) < 10)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Monitor_Hydratio">*/
+        class Monitor_Hydratio
+        {
+          priority = 0.000000;
+          to="Dehydrate__playe";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_thirstCheck - time) > _thirstTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Warn_player_of_H">*/
+    class Warn_player_of_H
+    {
+      name = "Warn_player_of_H";
+      init = /*%FSM<STATEINIT""">*/"hint format[""You're starting to become dehydrated you should get water.\n\nHydration Level: %1%"", round(thirstLevel)];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Monitor_Hydratio">*/
+        class Monitor_Hydratio
+        {
+          priority = 0.000000;
+          to="Dehydrate__playe";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_thirstCheck - time) > _thirstTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Make_player_hung">*/
+    class Make_player_hung
+    {
+      name = "Make_player_hung";
+      init = /*%FSM<STATEINIT""">*/"hungerLevell = (hungerLevel)-20;" \n
+       "" \n
+       "_hungerCheck = time;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Monitor_Hunger">*/
+        class Monitor_Hunger
+        {
+          priority = 0.000000;
+          to="Make_player_hung";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_hungerCheck - time) > _hungerTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Check_Hunger">*/
+        class Check_Hunger
+        {
+          priority = 0.000000;
+          to="notify_hunger";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(round(hungerLevel) < 40) OR (round(hungerLevell) < 25) OR (round(hungerLevel) < 10)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Kill_from_dehydr">*/
+    class Kill_from_dehydr
+    {
+      name = "Kill_from_dehydr";
+      init = /*%FSM<STATEINIT""">*/"player setDamage 1;" \n
+       "hint ""You have died from dehydration"";" \n
+       "" \n
+       "_walkDis = 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "notify_hunger">*/
+    class notify_hunger
+    {
+      name = "notify_hunger";
+      init = /*%FSM<STATEINIT""">*/"hint format[""You're starting to starve you should eat food.\n\nHunger Level: %1%"", round(hungerLevel)];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Monitor_Hunger">*/
+        class Monitor_Hunger
+        {
+          priority = 0.000000;
+          to="Make_player_hung";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_hungerCheck - time) > _hungerTime)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Critical_Hunger">*/
+        class Critical_Hunger
+        {
+          priority = 0.000000;
+          to="Kill_from_hunger";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"(hungerLevel < 1.5)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Kill_from_hunger">*/
+    class Kill_from_hunger
+    {
+      name = "Kill_from_hunger";
+      init = /*%FSM<STATEINIT""">*/"player setDamage 1;" \n
+       "hint ""You have starved to death."";"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/

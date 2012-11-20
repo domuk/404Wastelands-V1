@@ -1,0 +1,1 @@
+//diag_log format ["onHit :: %1", _this];

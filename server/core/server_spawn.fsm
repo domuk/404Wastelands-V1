@@ -1,0 +1,401 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Wasteland Object Spawner">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-16.559376,-160.224701,73.440582,-110.224701,0.000000,"init"};
+item1[] = {"true",8,218,-11.338058,-88.748512,78.662003,-38.748486,0.000000,"true"};
+item2[] = {"Spawn_Cars",2,4346,-11.762417,213.955856,78.237518,263.955780,0.000000,"Spawn Cars"};
+item3[] = {"true",8,218,124.795441,193.435181,214.795471,243.435165,0.000000,"true"};
+item4[] = {"Spawn_Objects",2,250,-7.560562,-7.936531,82.439453,42.063473,0.000000,"Spawn Objects"};
+item5[] = {"true",8,218,123.994843,94.586029,213.994934,144.586029,0.000000,"true"};
+item6[] = {"Spawn_Boats",2,250,-19.796370,127.509323,70.203659,177.509323,0.000000,"Spawn Boats"};
+item7[] = {"true",8,218,-182.192856,219.450119,-92.192856,269.450195,0.000000,"true"};
+item8[] = {"Output_Message",2,250,-182.192810,317.408630,-92.192795,367.408630,0.000000,"Output Message"};
+item9[] = {"true",8,218,-23.108135,319.814148,66.891861,369.814148,0.000000,"true"};
+item10[] = {"waiting_for_clea",2,250,-23.891796,425.609406,66.108215,475.609406,0.000000,"waiting" \n "for" \n "cleanup"};
+item11[] = {"Bodies",4,218,-132.822083,497.706970,-42.821732,547.706665,0.000000,"Bodies"};
+item12[] = {"Cars",4,218,209.518555,488.186371,299.518585,538.186523,0.000000,"Cars"};
+item13[] = {"Objects",4,218,-18.496708,497.953613,71.503342,547.953613,0.000000,"Objects"};
+item14[] = {"Cleanup__the_dea",2,250,-132.821777,583.126953,-42.821907,633.126953,0.000000,"Cleanup " \n "the dead"};
+item15[] = {"Cleanup_Destroyed",2,250,214.188568,578.247864,304.188568,628.247925,0.000000,"Cleanup" \n "Destroyed" \n "Cars"};
+item16[] = {"Object_Cleanup",2,250,-12.227337,585.724487,77.772705,635.724487,0.000000,"Object" \n "Cleanup"};
+item17[] = {"true",8,218,-13.704113,674.815979,76.295883,724.815979,0.000000,"true"};
+item18[] = {"",7,210,-167.303177,695.825928,-159.303146,703.825928,0.000000,""};
+item19[] = {"",7,210,-167.501236,446.907654,-159.501236,454.907654,0.000000,""};
+item20[] = {"true",8,218,176.947174,662.800842,266.947327,712.800842,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {1,4};
+link2[] = {2,7};
+link3[] = {3,2};
+link4[] = {4,5};
+link5[] = {5,6};
+link6[] = {6,3};
+link7[] = {7,8};
+link8[] = {8,9};
+link9[] = {9,10};
+link10[] = {10,11};
+link11[] = {10,12};
+link12[] = {10,13};
+link13[] = {11,14};
+link14[] = {12,15};
+link15[] = {13,16};
+link16[] = {14,17};
+link17[] = {15,17};
+link18[] = {15,20};
+link19[] = {16,17};
+link20[] = {17,18};
+link21[] = {18,19};
+link22[] = {19,10};
+link23[] = {20,2};
+globals[] = {0.000000,0,0,0,0,640,480,1,39,6316128,1,-935.486938,935.289612,997.863892,-220.347214,1399,911,1};
+window[] = {2,-1,-1,-1,-1,910,150,1590,150,3,1417};
+*//*%FSM</HEAD>*/
+class FSM
+{
+  fsmName = "Wasteland Object Spawner";
+  class States
+  {
+    /*%FSM<STATE "init">*/
+    class init
+    {
+      name = "init";
+      init = /*%FSM<STATEINIT""">*/"_excludeVehs = [""RM70_ACR"",""Dingo_GL_Wdl_ACR"",""Dingo_WDL_ACR"",""MAZ_543_SCUD_TK_EP1"",""GRAD_INS"",""GRAD_RU"",""GRAD_CDF"",""MtvrReammo_DES_EP1"",""MtvrReammo"",""WarfareReammoTruck_USMC"",""MtvrRefuel_DES_EP1"",""MtvrRefuel"",""MtvrRepair_DES_EP1"",""MtvrRepair"",""WarfareRepairTruck_Gue"",""WarfareSupplyTruck_Gue"",""WarfareSupplyTruck_INS"",""WarfareSupplyTruck_USMC"",""WarfareSupplyTruck_RU"",""UralSupply_TK_EP1"",""V3S_Supply_TK_GUE_EP1"",""WarfareSupplyTruck_CDF"",""MtvrSupply_DES_EP1"",""UralReammo_INS"",""UralReammo_CDF"",""WarfareReammoTruck_INS"",""WarfareReammoTruck_Gue"",""UralReammo_TK_EP1"",""WarfareReammoTruck_CDF"",""UralRefuel_CDF"",""UralRefuel_TK_EP1"",""UralRefuel_INS"",""UralRepair_TK_EP1"",""UralRepair_INS"",""UralRepair_CDF"",""Ural_ZU23_TK_EP1"",""Ural_ZU23_TK_GUE_EP1"",""Ural_ZU23_CDF"",""Ural_ZU23_Gue"",""Ural_ZU23_INS"",""KamazReammo"",""WarfareReammoTruck_RU"",""KamazRefuel"",""KamazRepair"",""V3S_Reammo_TK_GUE_EP1"",""V3S_Refuel_TK_GUE_EP1"",""V3S_Repair_TK_GUE_EP1"",""BAF_Jackal2_GMG_D"",""BAF_Jackal2_GMG_W"",""BAF_Jackal2_L2A1_W""];" \n
+       "" \n
+       "_carsDone = false;" \n
+       "_objDone = false;" \n
+       "_boatDone = false;" \n
+       "_carCleanup = time;" \n
+       "_objCleanup = time;" \n
+       "_currTotaledCars = 0;" \n
+       "_boolRespawnCars = false;" \n
+       "" \n
+       "" \n
+       "_time = time;" \n
+       "diag_log(""Spawn System: Started"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Spawn_Objects";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spawn_Cars">*/
+    class Spawn_Cars
+    {
+      name = "Spawn_Cars";
+      init = /*%FSM<STATEINIT""">*/"if (_boolRespawnCars) then {" \n
+       "{" \n
+       "" \n
+       "		_building = _x;" \n
+       "		_num = (random 100);" \n
+       "		if (_num < chanceNumber) then {" \n
+       "		if ((typeOf _building) in blacklist) then {" \n
+       "		} else" \n
+       "	" \n
+       "		{" \n
+       "		if ((typeOf _building) in militarylist) then {" \n
+       "		_build = getpos _building;" \n
+       "		[_Build,1] call vehicleInfo;" \n
+       "		} else {" \n
+       "		_build = getpos _building;" \n
+       "		[_Build,0] call vehicleInfo;" \n
+       "		};" \n
+       "		};" \n
+       "	};" \n
+       "} forEach buildings;" \n
+       "_carsDone = true;" \n
+       "" \n
+       "	hint format[""Respawned %1 previously totaled cars."", _currTotaledCars];" \n
+       "" \n
+       "	_boolRespawnCars = false;" \n
+       "	_currTotaledCars = 0;" \n
+       "" \n
+       "} else {" \n
+       "{" \n
+       "" \n
+       "		_building = _x;" \n
+       "		_num = (random 100);" \n
+       "		if (_num < chanceNumber) then {" \n
+       "		if ((typeOf _building) in blacklist) then {" \n
+       "		} else" \n
+       "	" \n
+       "		{" \n
+       "		if ((typeOf _building) in militarylist) then {" \n
+       "		_build = getpos _building;" \n
+       "		[_Build,1] call vehicleInfo;" \n
+       "		} else {" \n
+       "		_build = getpos _building;" \n
+       "		[_Build,0] call vehicleInfo;" \n
+       "		};" \n
+       "		};" \n
+       "	};" \n
+       "} forEach buildings;" \n
+       "_carsDone = true;" \n
+       "};"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Output_Message";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_carsDone"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spawn_Objects">*/
+    class Spawn_Objects
+    {
+      name = "Spawn_Objects";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	_building = _x;" \n
+       "	if ((typeOf _building) in blacklist) then {} else {" \n
+       "		_num = (random 100);" \n
+       "		if (_num < objectNumber) then {" \n
+       "		_build = getpos _building;" \n
+       "		[_Build] call objSpawn;};" \n
+       "	};" \n
+       "	" \n
+       "} forEach buildings;" \n
+       "_objDone = true;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Spawn_Boats";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_objDone"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Spawn_Boats">*/
+    class Spawn_Boats
+    {
+      name = "Spawn_Boats";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "_num = (random 100);" \n
+       "if(_num < 40) then" \n
+       "{" \n
+       "	_boat = boatsArray call BIS_fnc_selectRandom;" \n
+       "	_tmp = _boat createVehicle getMarkerPos _x;" \n
+       "};" \n
+       "} foreach [""dock1"",""dock2"",""dock3"",""dock4"",""dock5"",""dock6"",""dock7"",""dock8"",""dock9"",""dock10"",""dock11"",""dock12"",""dock13"",""dock14"",""dock15"",""dock16"",""dock17""];" \n
+       "_boatDone = true;" \n
+       ""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Spawn_Cars";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_boatDone"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Output_Message">*/
+    class Output_Message
+    {
+      name = "Output_Message";
+      init = /*%FSM<STATEINIT""">*/"diag_log(""Spawn System: Completed"");" \n
+       "_totalTime = round((time - _time));" \n
+       "diag_log format[""WASTELAND SERVER : Spawn System: Total Time to execute - %1 seconds"",  _totalTime];" \n
+       "diag_log format[""WASTELAND SERVER : Spawn System: Total Vehicles %1"", count AllMissionObjects ""LandVehicle""];" \n
+       "diag_log format[""WASTELAND SERVER : Spawn System: Total Objects %1"", count AllMissionObjects ""building""];" \n
+       "diag_log format[""WASTELAND SERVER : Spawn System: Total Boats %1"", count AllMissionObjects ""Ship""];"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="waiting_for_clea";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/"_totCars = 0;" \n
+           "_totObj = 0;"/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "waiting_for_clea">*/
+    class waiting_for_clea
+    {
+      name = "waiting_for_clea";
+      init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "Cars">*/
+        class Cars
+        {
+          priority = 0.000000;
+          to="Cleanup_Destroyed";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_carCleanup - time) > 60)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Objects">*/
+        class Objects
+        {
+          priority = 0.000000;
+          to="Object_Cleanup";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((_objCleanup - time) > 900)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "Bodies">*/
+        class Bodies
+        {
+          priority = 0.000000;
+          to="Cleanup__the_dea";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"((count allDead) > 100)"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Cleanup__the_dea">*/
+    class Cleanup__the_dea
+    {
+      name = "Cleanup__the_dea";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "deleteVehicle _x;" \n
+       "} foreach AllDead;" \n
+       "" \n
+       "diag_log(""Server Cleanup: Removing Dead Bodies"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="waiting_for_clea";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Cleanup_Destroyed">*/
+    class Cleanup_Destroyed
+    {
+      name = "Cleanup_Destroyed";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	if((damage _x) == 1) then" \n
+       "	{" \n
+       "		_boolRespawnCars = true;" \n
+       "		deleteVehicle _x;" \n
+       "		_totCars = _totCars + 1;" \n
+       "		_currTotaledCars = _totCars" \n
+       "	};" \n
+       "} foreach allMissionObjects ""LandVehicle"";" \n
+       "" \n
+       "_carCleanup = time;" \n
+       "diag_log format[""WASTELAND SERVER : Server Cleanup: %1 destroyed cars removed."", _totCars];" \n
+       "_totCars = 0;"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="Spawn_Cars";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"_boolRespawnCars"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+        /*%FSM<LINK "true_1">*/
+        class true_1
+        {
+          priority = 0.000000;
+          to="waiting_for_clea";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+    /*%FSM<STATE "Object_Cleanup">*/
+    class Object_Cleanup
+    {
+      name = "Object_Cleanup";
+      init = /*%FSM<STATEINIT""">*/"{" \n
+       "	if(typeOf _x == ""Land_stand_small_EP1"") then" \n
+       "	{" \n
+       "		if(_x getVariable ""food"" == 0) then" \n
+       "		{" \n
+       "			deleteVehicle _x;" \n
+       "		};" \n
+       "	};" \n
+       "" \n
+       "	if(typeOf _x == ""Land_Barrel_water"") then" \n
+       "	{" \n
+       "		if(_x getVariable ""water"" == 0) then" \n
+       "		{" \n
+       "			deleteVehicle _x;" \n
+       "		}" \n
+       "	};" \n
+       "} foreach allMissionObjects ""building"";" \n
+       "" \n
+       "diag_log(""Server Cleanup: Removing empty food stands and water barrels"");"/*%FSM</STATEINIT""">*/;
+      precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+      class Links
+      {
+        /*%FSM<LINK "true">*/
+        class true
+        {
+          priority = 0.000000;
+          to="waiting_for_clea";
+          precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+          condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+          action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+        };
+        /*%FSM</LINK>*/
+      };
+    };
+    /*%FSM</STATE>*/
+  };
+  initState="init";
+  finalStates[] =
+  {
+  };
+};
+/*%FSM</COMPILE>*/
