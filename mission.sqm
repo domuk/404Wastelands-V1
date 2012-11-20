@@ -58,8 +58,8 @@ class Mission
 	randomSeed=9922807;
 	class Intel
 	{
-		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5";
-		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.5";
+		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5a";
+		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.5a";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;

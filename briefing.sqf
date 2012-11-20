@@ -67,6 +67,18 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.5a",
+"
+<br/>
+		[Fixed] - Server performance issues.<br/>
+        [Fixed] - Vehicle cleanup.<br/>
+        [Fixed] - Team locking time which is actually 3 mins now.<br/>
+"
+]
+];
+
 player createDiaryRecord["404games",
 [
 "Credits",
@@ -116,8 +128,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.5<br/>
-	Build Date: 18/11/2012 24:00:00
+	Server Version: v1.5a<br/>
+	Build Date: 20/11/2012 24:00:00
 "
 ]
 ];

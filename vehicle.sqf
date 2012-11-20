@@ -74,6 +74,8 @@ _unitname = vehicleVarName _unit;
 if (isNil _unitname) then {_hasname = false;} else {_hasname = true;};
 _noend = true;
 _run = true;
+_startTime = call timeInMins;
+_result = 0;
 _rounds = 0;
 
 if (_delay < 0) then {_delay = 0};
@@ -87,51 +89,61 @@ _type = typeOf _unit;
 _dead = false;
 _nodelay = false;
 
-
 // Start monitoring the vehicle
 while {_run} do 
 {	
-	sleep (2 + random 10);
-      if ((getDammage _unit > 0.8) and ({alive _x} count crew _unit == 0)) then {_dead = true};
+	_currTime = call timeInMins;
+    _result = [_currTime, _startTime, 20] call compareTime;
+        
+	if(_result == 1) then
+    {
+        sleep (2 + random 10);
+      	if ((getDammage _unit > 0.8) and ({alive _x} count crew _unit == 0)) then {_dead = true};
 
-	// Check if the vehicle is deserted.
-	if (_deserted > 0) then
-	{
-		if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then 
+		// Check if the vehicle is deserted.
+		if (_deserted > 0) then
 		{
-			_timeout = time + _deserted;
-			sleep 0.1;
-		 	waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
-			if ({alive _x} count crew _unit > 0) then {_dead = false}; 
-			if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true}; 
-			if !(alive _unit) then {_dead = true; _nodelay = false}; 
+			if ((getPosASL _unit distance _position > 10) and ({alive _x} count crew _unit == 0) and (getDammage _unit < 0.8)) then 
+			{
+				_timeout = time + _deserted;
+				sleep 0.1;
+			 	waitUntil {_timeout < time or !alive _unit or {alive _x} count crew _unit > 0};
+				if ({alive _x} count crew _unit > 0) then {_dead = false}; 
+				if ({alive _x} count crew _unit == 0) then {_dead = true; _nodelay =true}; 
+				if !(alive _unit) then {_dead = true; _nodelay = false}; 
+			};
 		};
-	};
 
-	// Respawn vehicle
-      if (_dead) then 
-	{	
-		if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
-		if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
-		if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
-		sleep 0.1;
-
-		deleteVehicle _unit;
-		sleep 2;
-		_unit = _type createVehicle _position;
-		_unit setPosASL _position;
-		_unit setDir _dir;
-
-		if (_haveinit) then 
-					{_unit setVehicleInit format ["%1;", _unitinit];
-					processInitCommands;};
-		if (_hasname) then 
-					{_unit setVehicleInit format ["%1 = this; this setVehicleVarName ""%1""",_unitname];
-					processInitCommands;};
-		_dead = false;
-
-		// Check respawn amount
-		if !(_noend) then {_rounds = _rounds + 1};
-		if ((_rounds == _respawns) and !(_noend)) then {_run = false;};
-	};
+		// Respawn vehicle
+      	if (_dead) then 
+		{	
+			if (_nodelay) then {sleep 0.1; _nodelay = false;} else {sleep _delay;};
+			if (_dynamic) then {_position = getPosASL _unit; _dir = getDir _unit;};
+			if (_explode) then {_effect = "M_TOW_AT" createVehicle getPosASL _unit; _effect setPosASL getPosASL _unit;};
+			sleep 0.1;
+	
+			deleteVehicle _unit;
+			sleep 2;
+			_unit = _type createVehicle _position;
+			_unit setPosASL _position;
+			_unit setDir _dir;
+	
+			if (_haveinit) then 
+						{_unit setVehicleInit format ["%1;", _unitinit];
+						processInitCommands;};
+			if (_hasname) then 
+						{_unit setVehicleInit format ["%1 = this; this setVehicleVarName ""%1""",_unitname];
+						processInitCommands;};
+			_dead = false;
+	
+			// Check respawn amount
+			if !(_noend) then {_rounds = _rounds + 1};
+			if ((_rounds == _respawns) and !(_noend)) then {_run = false;};
+		};
+        
+        _startTime = call timeInMins;
+		_result = 0;
+    } else {
+    	sleep 1;
+    };
 };

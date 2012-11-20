@@ -3,16 +3,12 @@
 private["_currTime","_startTime","_duration","_result","_return"];
 
 _currTime = _this select 0;
-diag_log format["WASTELAND SERVER - currTime = %1",_currTime];
 _startTime = _this select 1;
-diag_log format["WASTELAND SERVER - startTime = %1",_startTime];
 _duration = _this select 2;
-diag_log format["WASTELAND SERVER - duration = %1",_duration];
 _result = 0;
 
 if(_startTime > 20) then
 {
-    diag_log format["WASTELAND SERVER - _startTime is greater than 20"];
     switch (_currTime) do {
         case 0:{_currTime = 1440;};
         case 1:{_currTime = 1441;};
@@ -35,10 +31,9 @@ if(_startTime > 20) then
         case 18:{_currTime = 1458;};
         case 19:{_currTime = 1459;};
         case 20:{_currTime = 1460;};
-        default	{diag_log format["WASTELAND SERVER - Default Case"];};
+        default	{};
     };
 };
-diag_log format["WASTELAND SERVER - currTime after case = %1",_currTime];
 if(_currTime >= (_startTime + _duration)) then {_result = 1};
 
 _return = _result;

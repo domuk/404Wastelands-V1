@@ -93,11 +93,11 @@ if((_player getVariable "repairkits") > 0) then {
 	};
 };
 
-if(_player getVariable "fuelFull") then {
-	_m = "Fuel_can" createVehicle (position _player);
-	_m setVariable["fuel",true,true];
-	_to_delete = _to_delete + [_m];
-};
+//if(_player getVariable "fuelFull") then {
+//	_m = "Fuel_can" createVehicle (position _player);
+//	_m setVariable["fuel",true,true];
+//	_to_delete = _to_delete + [_m];
+//};
 
 //if(_player getVariable "fuelEmpty") then {
 //	_m = "Fuel_can" createVehicle (position _player);

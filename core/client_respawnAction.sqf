@@ -126,7 +126,6 @@ if(isNil{client_firstSpawn}) then {
     true spawn {
         
         _startTime = LocalTime;
-        diag_log format["WASTELAND SERVER - LocalTime = %1", LocalTime];
         waitUntil{
         	_currTime = LocalTime;
     		_result = [_currTime, _startTime, 3] call client_CompareTime;

@@ -6,6 +6,7 @@ publicVariable "pvar_teamKillList";
 pvar_teamSwitchList = [];
 publicVariable "pvar_teamSwitchList";
 
+[] execVM "server\core\scripts\functions\client_TimeInMins.sqf";
 [] execVM "server\core\scripts\startup\serverCompile.sqf";
 [] execVM "server\core\scripts\startup\wasteland_spawn.sqf";
 
