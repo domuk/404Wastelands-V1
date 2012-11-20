@@ -3,9 +3,11 @@ X_Client = false;
 X_JIP = false;
 StartProgress = false;
 
-versionName = "v1.3";
+versionName = "v1.5";
 
 [] execVM "briefing.sqf"; //Load Briefing
+
+"Arma2Net.Unmanaged" callExtension "Activate";
 
 if(isServer) then { X_Server = true;};
 if(!isDedicated) then { X_Client = true;};
@@ -26,6 +28,7 @@ enableSaving[false,false];
 [] call compile preprocessFileLineNumbers "core\misc\compile.sqf"; //Load precompiled commands
 [] call compile preprocessFileLineNumbers "core\init.sqf";
 [] call compile preprocessFileLineNumbers "proving_Ground\init.sqf";
+[] call compile preprocessFileLineNumbers "admins.sqf";
 
 //init 3rd Party Scripts
 [] execVM "R3F_ARTY_AND_LOG\init.sqf";

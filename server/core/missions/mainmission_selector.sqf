@@ -1,5 +1,7 @@
 if(!isServer) exitWith {};
 
+diag_log format["WASTELAND SERVER - Started Mission Selector"];
+
 //Main Mission Array
 _MMarray = ["mission_MBT",
             "mission_LightTank",
@@ -16,4 +18,5 @@ _numb = count _MMarray;
 _num = floor (random _numb);
 _element = _MMarray select _num;
 
-[1] execVM format ["server\core\missions\mainmissions\%1.sqf",_element];
+diag_log format["WASTELAND SERVER - Execute First Mission"];
+execVM format ["server\core\missions\mainmissions\%1.sqf", _element];

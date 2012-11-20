@@ -122,4 +122,36 @@ closeDialog 0;
 if(isNil{client_firstSpawn}) then {
 	client_firstSpawn = true;
 	[] execVM "core\client_introMessage.sqf";
+    
+    true spawn {
+        
+        _startTime = LocalTime;
+        diag_log format["WASTELAND SERVER - LocalTime = %1", LocalTime];
+        waitUntil{
+        	_currTime = LocalTime;
+    		_result = [_currTime, _startTime, 3] call client_CompareTime;
+    		(_result == 1)    
+        };
+		if(playerSide in [west, east]) then {
+			_found = false;
+			{
+				if(_x select 0 == playerUID) then {_found = true;};
+			} forEach pvar_teamSwitchList;
+			if(!_found) then {
+				pvar_teamSwitchList set [count pvar_teamSwitchList, [playerUID, playerSide]];
+				publicVariable "pvar_teamSwitchList";
+                
+                _side = "";
+                if(str(playerSide) == "WEST") then {
+                    _side = "Blufor";
+                };
+                
+                if(str(playerSide) == "EAST") then {
+                    _side = "Opfor";
+                };
+                
+				titleText [format["You have been locked to %1",_side],"PLAIN",0];
+			};
+		};
+	};
 };

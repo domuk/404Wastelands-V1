@@ -26,7 +26,7 @@
   By default the number of respawns is infinite. To set a limit
   First set the other values then the number of respawns you want (0 = infinite).
   Like this:
-  veh = [this, 15, 10, 5] execVM "vehicle.sqf"
+  veh = [this, 15, 10, 0] execVM "vehicle.sqf"
 
 
   Set this value to TRUE to add a special explosion effect to the wreck when respawning.

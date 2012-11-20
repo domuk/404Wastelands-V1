@@ -53,21 +53,20 @@ class Mission
 		"caweapons_ammoboxes",
 		"cabuildings",
 		"caair_e_an2",
-		"caair_e",
 		"chernarus"
 	};
 	randomSeed=9922807;
 	class Intel
 	{
-		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.4";
-		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.4";
+		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5";
+		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.5";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
 		year=2011;
 		month=7;
 		day=6;
-		hour=6;
+		hour=8;
 		minute=0;
 	};
 	class Groups
@@ -180,10 +179,11 @@ class Mission
 				class Item0
 				{
 					position[]={13908.179,18.021585,2808.2749};
-					azimut=192.27431;
+					azimut=192.274;
 					id=9;
 					side="WEST";
 					vehicle="FR_AC";
+					player="PLAY CDG";
 					leader=1;
 					skill=0.60000002;
 					text="blufor1";
@@ -2756,7 +2756,7 @@ class Mission
 				{
 					position[]={10427.027,10.748408,2366.4006};
 					azimut=328.64359;
-					id=156;
+					id=154;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2776,7 +2776,7 @@ class Mission
 				{
 					position[]={6016.0107,305.79456,7815.5566};
 					azimut=328.64359;
-					id=157;
+					id=155;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2796,7 +2796,7 @@ class Mission
 				{
 					position[]={2586.0693,198.74002,5063.9194};
 					azimut=328.64359;
-					id=158;
+					id=156;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2816,7 +2816,7 @@ class Mission
 				{
 					position[]={11249.045,194.08,12208.52};
 					azimut=328.64359;
-					id=159;
+					id=157;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2836,7 +2836,7 @@ class Mission
 				{
 					position[]={10634.965,215.50311,8020.8521};
 					azimut=328.64359;
-					id=160;
+					id=158;
 					side="LOGIC";
 					vehicle="TK_CIV_Takistani04_EP1";
 					leader=1;
@@ -2849,7 +2849,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=28;
+		items=26;
 		class Item0
 		{
 			position[]={8342.751,26.983168,3343.3755};
@@ -3057,31 +3057,10 @@ class Mission
 		};
 		class Item19
 		{
-			position[]={4843.5298,339.08075,10214.273};
-			azimut=240;
-			id=147;
-			side="EMPTY";
-			vehicle="An2_2_TK_CIV_EP1";
-			lock="UNLOCKED";
-			skill=0.60000002;
-			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
-		};
-		class Item20
-		{
-			position[]={11780.455,158.88177,12832.665};
-			azimut=110;
-			id=148;
-			side="EMPTY";
-			vehicle="C130J_US_EP1";
-			skill=0.60000002;
-			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
-		};
-		class Item21
-		{
 			position[]={10424.907,10.747202,2367.6357};
 			azimut=-53.868099;
 			special="NONE";
-			id=149;
+			id=147;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3089,12 +3068,12 @@ class Mission
 			text="fp5";
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
-		class Item22
+		class Item20
 		{
 			position[]={6013.9927,305.79456,7816.7412};
 			azimut=-53.868099;
 			special="NONE";
-			id=150;
+			id=148;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3102,12 +3081,12 @@ class Mission
 			text="fp6";
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
-		class Item23
+		class Item21
 		{
 			position[]={2587.6858,198.74002,5064.8896};
 			azimut=53.868099;
 			special="NONE";
-			id=151;
+			id=149;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3115,12 +3094,12 @@ class Mission
 			text="fp7";
 			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
 		};
-		class Item24
+		class Item22
 		{
 			position[]={11249.974,194.08,12208.114};
 			azimut=115.8681;
 			special="NONE";
-			id=152;
+			id=150;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3128,12 +3107,12 @@ class Mission
 			text="fp8";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item25
+		class Item23
 		{
 			position[]={10635.894,215.50311,8020.4468};
 			azimut=210.868;
 			special="NONE";
-			id=153;
+			id=151;
 			side="EMPTY";
 			vehicle="Land_Campfire_burning";
 			leader=1;
@@ -3141,22 +3120,22 @@ class Mission
 			text="fp9";
 			init="this setVariable [""R3F_LOG_disabled"", true];";
 		};
-		class Item26
+		class Item24
 		{
 			position[]={4843.5298,339.08075,10214.273};
 			azimut=240;
-			id=154;
+			id=152;
 			side="EMPTY";
 			vehicle="An2_2_TK_CIV_EP1";
 			lock="UNLOCKED";
 			skill=0.60000002;
 			init="veh = [this, 3600, 3600, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
 		};
-		class Item27
+		class Item25
 		{
-			position[]={11782.098,158.81609,12831.228};
-			azimut=112.16474;
-			id=155;
+			position[]={11781.043,158.85826,12832.107};
+			azimut=112.165;
+			id=153;
 			side="EMPTY";
 			vehicle="An2_2_TK_CIV_EP1";
 			skill=0.60000002;

@@ -1,0 +1,1 @@
+pvar_teamKillList = [];

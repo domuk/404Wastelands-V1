@@ -17,11 +17,29 @@ if(isstunned) exitwith
 
 switch _key do
 {
+    
+    
+              
     //U key
     case 22:
     {
         //hint "you pressed the U key";
-	execVM "core\admin\checkAdmin.sqf";
+		execVM "core\admin\checkAdmin.sqf";
+    };
+    
+    //tilde
+    case 41:
+    {
+        [] call waste_fnc_pMenu;
+    };
+    
+    //Y key
+    case 21:
+    {
+        if(((getPlayerUID player) in provingGrounds) || client_isDebug) then
+		{
+			createDialog "balca_debug_main";
+		};
     };
 };
 

@@ -1,5 +1,12 @@
 if(!X_Server) exitWith {};
 
+pvar_teamKillList = [];
+publicVariable "pvar_teamKillList";
+
+pvar_teamSwitchList = [];
+publicVariable "pvar_teamSwitchList";
+
+[] execVM "server\core\scripts\startup\serverCompile.sqf";
 [] execVM "server\core\scripts\startup\wasteland_spawn.sqf";
 
 // <editor-fold desc="Friendly Fire Fix">
@@ -20,6 +27,7 @@ CIVILIAN setFriend [RESISTANCE, 0];
 //</editor-fold>
 
 if (CVG_SideMissions == 1) then {
+    diag_log format["WASTELAND SERVER - Execute Mission Selector"];
     [] execVM "server\core\missions\mainmission_selector.sqf";
 };
 

@@ -219,7 +219,7 @@ R3F_LOG_CFG_transporteurs = [
 	["StrykerBase_EP1", 25],
 	["hilux1_civil_1_open", 12],
 	["hilux1_civil_3_open_EP1", 12],
-	["Motorcycle", 3],
+	["Motorcycle", 5],
 	["2S6M_Tunguska", 10],
 	["M113_Base", 12],
 	["M1A1", 5],

@@ -12,7 +12,6 @@ player createDiaryRecord["changelog",
 	[Added] - Server Now Using BEC.<br/>
 	[Added] - Planes back in.<br/>
 	[Fixed] - Some performance issues e.g. server low fps and crashing.<br/>
-	
 "
 ]
 ];
@@ -26,7 +25,44 @@ player createDiaryRecord["changelog",
 	[Added] - General Stores to the server, You will be able to buy general items e.g. Food, Water<br/>
 	[Added] - More Administrator Options.<br/>
 	[Fixed] - Player team tags more visible and no longer don't disappear randomly.<br/>
-	
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.4a",
+"
+<br/>
+	[Fixed] - Tilde key player menu function	
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.4b",
+"
+<br/>
+	[Fixed] - Fixed the missions.<br/>
+    [Fixed] - Fixed planes spawning inside eachother.<br/>
+    [Fixed] - Fixed in-game lag.<br/>
+    [Fixed] - Updated shop descriptions.<br/>
+    [Updated] - Updated beta patch.<br/> 
+    [Changed] - In-game time will start at 15:00 to allow night time play.
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.5",
+"
+<br/>
+		[Fixed] - Fixed Teamkill Punish - 2 Punishes = forced to independent.<br/>
+        [Added] - Teamswitch restriction - You will be locked to a team in 3 mins (WEST/EAST).<br/>
+        [Added] - Vehicles respawning.<br/>
+        [Added] - Server code in the mission file.<br/> 
 "
 ]
 ];
@@ -80,8 +116,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.3a<br/>
-	Build Date: 11/11/2012 17:30:00
+	Server Version: v1.5<br/>
+	Build Date: 18/11/2012 24:00:00
 "
 ]
 ];

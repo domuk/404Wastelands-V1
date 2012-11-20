@@ -65,7 +65,7 @@ class Params
             title="Object Spawn Number:";
             values[]={2,6,12,15,20,30};
             texts[]={"Tiny","Small","Medium","Fair amount","A lot","INSANE"};
-            default=30;
+            default=15;
     };
 };
 

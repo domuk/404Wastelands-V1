@@ -22,11 +22,11 @@ if (_num < 25) then { _car addWeaponCargoGlobal ["NVgoggles", 1]};
 
 //Does some randomessness
 
-_rnd = random floor (count CVG_weapons);
+_rnd = floor random (count CVG_weapons);
 _weapon = CVG_weapons select _rnd;
 
 _mag = (getArray (configFile >> "Cfgweapons" >> _weapon >> "magazines")) select 0;
 
-//Add guns and magazines, note the Global at the end...
+//Add guns and magazines, note the Global at the end..
 _car addMagazineCargoGlobal [_mag,(random 4)];
 _car addWeaponCargoGlobal [_weapon,1];

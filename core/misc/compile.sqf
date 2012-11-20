@@ -16,5 +16,7 @@ client_teamkillMessage = compile preprocessFileLineNumbers "core\client_teamkill
 client_respawnDialog = compile preprocessFileLineNumbers "core\client_respawnDialog.sqf";
 client_respawnAction = compile preprocessFileLineNumbers "core\client_respawnAction.sqf";
 client_spawnStuff = compile preprocessFileLineNumbers "core\client_spawnStuff.sqf";
+client_CompareTime = compile preprocessFileLineNumbers "core\misc\client_CompareTime.sqf";
+PlayerConnected = compile preprocessfile "core\PlayerConnected.sqf";
 
 client_compiledScripts = true;

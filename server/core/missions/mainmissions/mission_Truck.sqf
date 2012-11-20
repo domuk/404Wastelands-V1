@@ -1,13 +1,13 @@
 //Refuel Truck Mission
 if(!isServer) exitwith {};
 sleep 10;
-
+diag_log format["WASTELAND SERVER - Mission Started"];
 // <editor-fold desc="Variables">
 private ["_rad","_cnps","_hills","_hillcount","_hillnum","_hill","_marker","_boxes","_numb","_boxnum","_box","_picture","_name","_text","_color","_tempPlayer"];
 
 _rad=20000;
-_missionTimeOut = 1200;
-_missionDelayTime = 300;
+_missionTimeOut = 20;
+_missionDelayTime = 5;
 _missionTriggerRadius = 100;
 _missionPlayerRadius = 50;
 _temptime = 0;
@@ -24,8 +24,17 @@ PlayerPresent = 0;
 _text6 = parseText format ["<t align='center' color='#0362f3' shadow='1' shadowColor='#000000' size='1.5'>Side Objective</t>
 							<t color='#FFCC33'>Starting in 5 Minutes</t>"];
 [nil,nil,rHINT,_text6] call RE; 
-sleep _missionDelayTime;
-_time = floor serverTime;
+
+diag_log format["WASTELAND SERVER - Mission Waiting to run"];
+_startTime = call timeInMins;
+waitUntil
+{ 
+    _currTime = call timeInMins;
+    _result = [_currTime, _startTime, _missionDelayTime] call compareTime;
+    (_result == 1)
+};
+diag_log format["WASTELAND SERVER - Mission Resumed"];
+_startTime = call timeInMins;
 
 _marker = createMarker ["Ammo_Marker", _hillpos ];
 "Ammo_Marker" setMarkerType "mil_destroy";
@@ -67,10 +76,12 @@ _trgr setTriggerActivation["GUER","PRESENT",true];
 _trgr setTriggerStatements["this", "PlayerPresent = 1", "PlayerPresent = 0"]; 
 // </editor-fold>
 
+diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
 waitUntil
 { 
-    _temptime = serverTime - _time;
-    (_temptime >= _missionTimeOut) or (PlayerPresent == 1) or getpos mtvrfuel distance getMarkerPos _marker > _missionTriggerRadius
+    _currTime = call timeInMins;
+    _result = [_currTime, _startTime, _missionDelayTime] call compareTime;
+    (_result == 1) or (PlayerPresent == 1) or getpos mtvrfuel distance getMarkerPos _marker > _missionTriggerRadius
 };
 
 if(_temptime >= _missionTimeOut) then
@@ -78,11 +89,14 @@ if(_temptime >= _missionTimeOut) then
     mtvrfuel setDamage 1;
     _text2 = parseText format ["<t align='center' color='#FF0000' shadow='1' shadowColor='#000000' size='1.5'>Side Objective Failed</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#666c3f' shadow='1' shadowColor='#000000'><t color='%3'><img size='4' image='%2'/></t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>No players captured the <t color='#FFCC33'>%1</t>. It was destroyed by the enemy.</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Try harder next time.</t>",   _name, _picture, _color ];
     [nil,nil,rHINT,_text2] call RE;
+    diag_log format["WASTELAND SERVER - Mission Failed"];
 } else
 {
     _text2 = parseText format ["<t align='center' color='#00D60E' shadow='1' shadowColor='#000000' size='1.5'>Side Objective Complete</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#666c3f' shadow='1' shadowColor='#000000'><t color='%3'><img size='4' image='%2'/></t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>Capture the <t color='#FFCC33'>%1</t>, has been completed!</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Now Help Your Team</t>",   _name, _picture, _color];
     [nil,nil,rHINT,_text2] call RE;
+    diag_log format["WASTELAND SERVER - Mission Finished"];
 };
 		
 deleteMarker _marker;
-[1] execVM format ["server\core\missions\mainmission_selector.sqf",_element];
+diag_log format["WASTELAND SERVER - Execute New Mission"];
+execVM "server\core\missions\mainmission_selector.sqf";

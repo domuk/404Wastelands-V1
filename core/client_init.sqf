@@ -48,33 +48,15 @@ if(!(playerSide in [west, east, resistance])) then {
 };
 
 pTeamkiller = objNull;
-iMyUID = getPlayerUID(player);
-"publicVar_teamkillersList" addPublicVariableEventHandler {
+"pvar_teamKillList" addPublicVariableEventHandler {
 	if(str(playerSide) in ["WEST", "EAST"]) then {
 		{
-			if(_x select 0 == iMyUID) then {
+			if(_x select 0 == playerUID) then {
 				if((_x select 1) >= 2) then {
 					endMission "LOSER";
 				};
 			};
-		} forEach publicVar_teamkillersList;
-	};
-};
-_dokick = false;
-if(str(playerSide) in ["WEST", "EAST"]) then {
-	{
-		if(_x select 0 == iMyUID) then {
-			if((_x select 1) >= 2) then {
-				_dokick = true;
-			};
-		};
-	} forEach publicVar_teamkillersList;
-};
-if(_dokick) exitWith {
-	titleText [localize "STR_WL_Loading_Teamkiller", "black"]; titleFadeOut 9999;
-	[] spawn {
-		sleep 20;
-		endMission "LOSER";
+		} forEach pvar_teamKillList;
 	};
 };
 
@@ -90,22 +72,6 @@ client_missionsMarkers = [];
 
 [] execVM "core\init_survival.sqf";
 
-/*
-keysDown = compile preprocessFile "core\misc\keyHandler.sqf";
-[] spawn {
-	private ["_display"];
-	_display = null;
-	disableSerialization;
-	while {true} do {
-		_display = findDisplay 46;
-		if(!isNull(_display)) exitWith {};
-		diag_log format ["Failed to get display (%1)", _display];
-		sleep 1;
-	};
-	_display displaySetEventHandler ["KeyDown", "_this call keysDown"];
-};
-*/
-
 onKeyPress = compile preprocessFile "core\misc\onKeyPress.sqf";
 waituntil {!(IsNull (findDisplay 46))};
 (findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyPress"];
@@ -120,18 +86,9 @@ if(getNumber(configFile >> "CfgVehicles" >> (typeOf player) >> "canCarryBackPack
 
 client_initComplete = true;
 
-[] call client_updateMissionsMarkers;
+//[] call client_updateMissionsMarkers;
 
 [] spawn client_initShopsMarkers;
 
 [] execVM "core\client_playerIcons.sqf";
-[] execVM "core\misc\client_teleportCheck.sqf";
-[] execVM "core\misc\client_treesCheck.sqf";
 [] execVM "core\misc\fnc_hud.sqf";
-
-[] spawn {
-	while{true} do {
-		{if(isNull(call compile format["%1", vehicleVarName _x])) then {_x call compile format["%1 = _this", vehicleVarName _x];};} forEach playableUnits;
-		sleep 30;
-	};
-};
