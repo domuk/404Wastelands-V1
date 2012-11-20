@@ -1,5 +1,5 @@
 #include "R3F_ARTY_AND_LOG\desc_include.h"
-loadScreen = "Loading.jpg";
+loadScreen = "server\core\assets\Loading.jpg";
 respawn="BASE";
 respawnDelay=15;
 disabledAI=1;
@@ -70,6 +70,7 @@ class RscTitles {
 	#include "proving_ground\PG_rsctitles.hpp"
 	#include "player_system\dialog\names.hpp"
 	#include "player_system\dialog\welcome.hpp"
+        #include "player_system\dialog\hud.hpp"
 };
 
 class CfgSounds {

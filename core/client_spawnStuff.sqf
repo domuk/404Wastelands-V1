@@ -43,8 +43,8 @@ playerMenuHandle = [] spawn {
 	};
 };
 
-thirstLevel = 150;
-hungerLevel = 150;
+thirstLevel = 125;
+hungerLevel = 125;
 
 _player setVariable["cmoney",200,false];
 _player setVariable["rabitmeat",0,false];

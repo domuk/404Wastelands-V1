@@ -50,7 +50,7 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.2c<br/>
+	Server Version: v1.3<br/>
 	Build Date: 05/11/2012 17:30:00
 "
 ]

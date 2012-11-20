@@ -43,7 +43,7 @@ class playerSettings {
 		class waterIcon : w_RscPicture {
 			
 	  		idc = -1;
-        	text = "player_system\icons\water.paa";
+        	text = "player_system\icons\w.paa";
         	x = 0.015; y = 0.19;
 			w = 0.05; h = 0.05;
 			
@@ -53,7 +53,7 @@ class playerSettings {
 		class foodIcon : w_RscPicture {
 			
       		idc = -1;
-        	text = "player_system\icons\food.paa";
+        	text = "player_system\icons\f.paa";
         	x = 0.02; y = 0.26;
 			w = 0.04; h = 0.04;
 		};

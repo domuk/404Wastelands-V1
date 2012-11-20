@@ -119,6 +119,7 @@ client_initComplete = true;
 [] execVM "core\client_playerIcons.sqf";
 [] execVM "core\misc\client_teleportCheck.sqf";
 [] execVM "core\misc\client_treesCheck.sqf";
+[] spawn fnc_hud;
 
 [] spawn {
 	while{true} do {

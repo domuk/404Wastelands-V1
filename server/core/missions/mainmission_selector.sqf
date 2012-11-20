@@ -9,8 +9,8 @@ _MMarray = ["mission_MBT",
             "mission_WepCache",
             "mission_ReconVeh",
             "mission_AirWreck",
-            "mission_FuelTruck",
-            "mission_FuelTruck"];
+            "mission_Truck",
+            "mission_Truck"];
             
 _numb = count _MMarray;
 _num = floor (random _numb);

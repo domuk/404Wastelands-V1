@@ -1,4 +1,4 @@
-/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, Wasteland Object Spawner">*/
+/*%FSM<COMPILE "C:\Program Files (x86)\Bohemia Interactive\Tools\FSM Editor Personal Edition\scriptedFSM.cfg, server_spawn">*/
 /*%FSM<HEAD>*/
 /*
 item0[] = {"init",0,250,-16.559376,-160.224701,73.440582,-110.224701,0.000000,"init"};
@@ -46,12 +46,12 @@ link20[] = {17,18};
 link21[] = {18,19};
 link22[] = {19,10};
 link23[] = {20,2};
-globals[] = {0.000000,0,0,0,0,640,480,1,39,6316128,1,-935.486938,935.289612,997.863892,-220.347214,1399,911,1};
-window[] = {2,-1,-1,-1,-1,910,150,1590,150,3,1417};
+globals[] = {0.000000,0,0,0,0,640,480,1,39,6316128,1,-198.515991,198.316818,556.627319,19.458370,673,911,1};
+window[] = {2,-1,-1,-1,-1,860,100,1540,100,3,691};
 *//*%FSM</HEAD>*/
 class FSM
 {
-  fsmName = "Wasteland Object Spawner";
+  fsmName = "server_spawn";
   class States
   {
     /*%FSM<STATE "init">*/
@@ -91,55 +91,21 @@ class FSM
     class Spawn_Cars
     {
       name = "Spawn_Cars";
-      init = /*%FSM<STATEINIT""">*/"if (_boolRespawnCars) then {" \n
+      init = /*%FSM<STATEINIT""">*/"_counter = 0;" \n
+       "" \n
+       "while {_counter < 746} do" \n
        "{" \n
-       "" \n
-       "		_building = _x;" \n
-       "		_num = (random 100);" \n
-       "		if (_num < chanceNumber) then {" \n
-       "		if ((typeOf _building) in blacklist) then {" \n
-       "		} else" \n
-       "	" \n
-       "		{" \n
-       "		if ((typeOf _building) in militarylist) then {" \n
-       "		_build = getpos _building;" \n
-       "		[_Build,1] call vehicleInfo;" \n
-       "		} else {" \n
-       "		_build = getpos _building;" \n
+       "	_num = floor (random 100);" \n
+       "	if (_num < 75) then {" \n
+       "		_build = getMarkerPos format [""Spawn_%1"", _counter];" \n
        "		[_Build,0] call vehicleInfo;" \n
-       "		};" \n
-       "		};" \n
-       "	};" \n
-       "} forEach buildings;" \n
-       "_carsDone = true;" \n
-       "" \n
-       "	hint format[""Respawned %1 previously totaled cars."", _currTotaledCars];" \n
-       "" \n
-       "	_boolRespawnCars = false;" \n
-       "	_currTotaledCars = 0;" \n
-       "" \n
-       "} else {" \n
-       "{" \n
-       "" \n
-       "		_building = _x;" \n
-       "		_num = (random 100);" \n
-       "		if (_num < chanceNumber) then {" \n
-       "		if ((typeOf _building) in blacklist) then {" \n
-       "		} else" \n
-       "	" \n
-       "		{" \n
-       "		if ((typeOf _building) in militarylist) then {" \n
-       "		_build = getpos _building;" \n
+       "	} else {" \n
+       "		_build = getMarkerPos format [""Spawn_%1"", _counter];" \n
        "		[_Build,1] call vehicleInfo;" \n
-       "		} else {" \n
-       "		_build = getpos _building;" \n
-       "		[_Build,0] call vehicleInfo;" \n
-       "		};" \n
-       "		};" \n
        "	};" \n
-       "} forEach buildings;" \n
-       "_carsDone = true;" \n
-       "};"/*%FSM</STATEINIT""">*/;
+       "    _counter = _counter + 1;" \n
+       "};" \n
+       "	_carsDone = true;"/*%FSM</STATEINIT""">*/;
       precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
       class Links
       {
@@ -192,12 +158,12 @@ class FSM
     {
       name = "Spawn_Boats";
       init = /*%FSM<STATEINIT""">*/"{" \n
-       "_num = (random 100);" \n
-       "if(_num < 40) then" \n
-       "{" \n
-       "	_boat = boatsArray call BIS_fnc_selectRandom;" \n
-       "	_tmp = _boat createVehicle getMarkerPos _x;" \n
-       "};" \n
+       "	_num = (random 100);" \n
+       "	if(_num < 40) then" \n
+       "	{" \n
+       "		_boat = boatsArray call BIS_fnc_selectRandom;" \n
+       "		_tmp = _boat createVehicle getMarkerPos _x;" \n
+       "	};" \n
        "} foreach [""dock1"",""dock2"",""dock3"",""dock4"",""dock5"",""dock6"",""dock7"",""dock8"",""dock9"",""dock10"",""dock11"",""dock12"",""dock13"",""dock14"",""dock15"",""dock16"",""dock17""];" \n
        "_boatDone = true;" \n
        ""/*%FSM</STATEINIT""">*/;
