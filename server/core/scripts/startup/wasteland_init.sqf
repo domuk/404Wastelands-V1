@@ -49,7 +49,7 @@ CVG_pistols = [];
                     ((_item_type in [3,4,5,6,7])||((_item_type==0)&&(_no_pack!=1)&&((_optics=="-")))||((_item_type==1)&&(_no_pack!=1)&&((_optics!="-")))||((_item_type==2)&&((_cur_type==5)||((_no_pack==1)&&(_cur_type in _type)))))) then {
 
                     if (_item_type == 0) then {
-                    CVG_Rifles set [(count CVG_Rifles),_weap_type];//CVG_Rifles
+                        CVG_Rifles set [(count CVG_Rifles),_weap_type];//CVG_Rifles
                     };
                     if (_item_type == 1) then {
                             CVG_Scoped set [(count CVG_Scoped),_weap_type];//CVG_Scoped
@@ -58,10 +58,10 @@ CVG_pistols = [];
                             CVG_Heavy set [(count CVG_Heavy),_weap_type];//CVG_Heavy
                     };
                     if (_item_type == 3) then {
-                    CVG_Launchers set [(count CVG_Launchers),_weap_type];//CVG_Launchers
+                        CVG_Launchers set [(count CVG_Launchers),_weap_type];//CVG_Launchers
                     };
                     if (_item_type == 4) then {
-                    CVG_Pistols set [(count CVG_Pistols),_weap_type];//CVG_Pistols
+                        CVG_Pistols set [(count CVG_Pistols),_weap_type];//CVG_Pistols
                     };
 
                     };

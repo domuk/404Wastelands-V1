@@ -1,6 +1,6 @@
 if(!X_Server) exitWith {};
 
-[1] execVM "server\core\scripts\startup\wasteland_spawn.sqf";
+[] execVM "server\core\scripts\startup\wasteland_spawn.sqf";
 
 // <editor-fold desc="Friendly Fire Fix">
 // Friendly Fire Fix Created by Armynator.
@@ -20,7 +20,9 @@ CIVILIAN setFriend [RESISTANCE, 0];
 //</editor-fold>
 
 if (CVG_SideMissions == 1) then {
-[1] execVM "server\core\missions\mainmission_selector.sqf";
+    [] execVM "server\core\missions\mainmission_selector.sqf";
 };
+
+[nil,nil,"per",rSIDECHAT,"Enjoy the game."] call RE;
 
 LHD1 call BIS_EW_fnc_createLHD;

@@ -123,6 +123,10 @@
 			<English>Gun store</English>
 			<Russian>Магазин оружия</Russian>
 		</Key>
+		<Key ID="STR_WL_Shop_Marker_GenStore">
+			<English>General store</English>
+			<Russian>общий оружия</Russian>
+		</Key>
 		<Key ID="STR_WL_Shop_Marker_Empty">
 			<English>Unoccupied</English>
 			<Russian>Свободен</Russian>

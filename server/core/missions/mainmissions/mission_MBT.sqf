@@ -7,7 +7,7 @@ private ["_rad","_cnps","_hills","_hillcount","_hillnum","_hill","_marker","_box
 
 _rad=20000;
 _missionTimeOut = 1200;
-_missionDelayTime = 10;
+_missionDelayTime = 600;
 _missionTriggerRadius = 100;
 _missionPlayerRadius = 50;
 _temptime = 0;

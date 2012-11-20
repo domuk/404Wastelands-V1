@@ -45,7 +45,7 @@ if(primaryWeapon _unit == "" && secondaryWeapon _unit == "") then
 	{
 	[nil,_target,rswitchmove,"AmelPercMstpSnonWnonDnon_zasah6hlava"] call RE;
 	};
-	//_target switchmove "adthpercmstpslowwrfldnon_4";
+	_target switchmove "adthpercmstpslowwrfldnon_4";
 	
 }
 	else

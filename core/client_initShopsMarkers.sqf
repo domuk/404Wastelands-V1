@@ -1,6 +1,8 @@
-private ["_status", "_gs_array", "_col_empty", "_col_enemy", "_col_friendly", "_radius"];
+private ["_status", "_gs_array", "_col_empty", "_col_enemy", "_col_friendly", "_radius", "_genshop_array", "_bastard_array"];
 
 _gs_array = ["gs1", "gs2", "gs3", "gs4"];
+_genshop_array = ["generalStore1","generalStore2","generalStore3","generalStore4","generalStore5"];
+_bastard_array = ["gs1", "gs2", "gs3", "gs4","generalStore1","generalStore2","generalStore3","generalStore4","generalStore5"];
 _col_empty = "ColorBlue";
 _col_enemy = "ColorRed";
 _col_friendly = "ColorGreen";
@@ -53,13 +55,53 @@ waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespac
 	_status set [count _status, "EMPTY"];
 } forEach _gs_array;
 
+waitUntil {{!isNull(missionNamespace getVariable _x) && ((getPos(missionNamespace getVariable _x) distance [0,0,0]) > 100)} count _genshop_array == count _genshop_array};
+
+{
+	_unit = missionNamespace getVariable _x;
+
+	// Circle zone
+	_mname = format ["shop_zone_%1", _x];
+	deleteMarkerLocal _mname;
+	_marker = createMarkerLocal [_mname, getPos _unit];
+	_mname setMarkerShapeLocal "ELLIPSE";
+	_mname setMarkerColorLocal _col_empty;
+	_mname setMarkerSizeLocal [_radius, _radius];
+	_mname setMarkerBrushLocal "Grid";
+	_mname setMarkerAlphaLocal 0.5;
+
+	// General store title
+	_mname = format ["shop_title_%1", _x];
+	deleteMarkerLocal _mname;
+	_marker = createMarkerLocal [_mname, getPos _unit];
+	_mname setMarkerShapeLocal "ICON";
+	_mname setMarkerTypeLocal "Dot";
+	_mname setMarkerColorLocal "ColorOrange";//"ColorBlack";
+	_mname setMarkerSizeLocal [0.8,0.8];
+	_mname setMarkerTextLocal (localize "STR_WL_Shop_Marker_GenStore");
+
+	// General store description
+	_mname = format ["shop_desc_%1", _x];
+	deleteMarkerLocal _mname;
+	_pos = getPos _unit; _pos set [1, (_pos select 1) - 190];
+	_marker = createMarkerLocal [_mname, _pos];
+	_mname setMarkerShapeLocal "ICON";
+	_mname setMarkerTypeLocal "mil_dot";
+	_mname setMarkerColorLocal _col_empty;//"ColorBlack";
+	_mname setMarkerSizeLocal [0.8,0.8];
+	_mname setMarkerTextLocal (localize "STR_WL_Shop_Marker_Empty");
+	_mname setMarkerAlphaLocal 0.5;
+
+	_status set [count _status, "EMPTY"];
+} forEach _genshop_array;
+
 private ["_fcnt", "_ecnt", "_unit", "_fnc_set_status"];
 
 _fnc_set_status = {
 	if(_status select (_this select 0) == (_this select 1)) exitWith {};
 
-	_mname_z = format ["shop_zone_%1", _gs_array select (_this select 0)];
-	_mname_d = format ["shop_desc_%1", _gs_array select (_this select 0)];
+	_mname_z = format ["shop_zone_%1", _bastard_array select (_this select 0)];
+	_mname_d = format ["shop_desc_%1", _bastard_array select (_this select 0)];
 	switch(_this select 1) do {
 		case "EMPTY": {
 			_mname_z setmarkerColorLocal _col_empty;
@@ -84,7 +126,7 @@ _fnc_set_status = {
 	};
 
 	if((_this select 2) && ((_this select 1) in ["ENEMY", "MIXED"])) then {
-		hint parseText format ["<t size='2' color='#ff0000'>%1</t><br/><br/>%2.",
+		hintSilent parseText format ["<t size='2' color='#ff0000'>%1</t><br/><br/>%2.",
 			localize "STR_WL_Gen_Warning",
 			localize "STR_WL_Shop_Message_EnemyApproaching"
 		];
@@ -95,8 +137,8 @@ _fnc_set_status = {
 
 showmarkers = true;
 while {showmarkers} do {
-	for "_i" from 0 to (count _gs_array - 1) do {
-		_unit = missionNamespace getVariable (_gs_array select _i);
+	for "_i" from 0 to (count _bastard_array - 1) do {
+		_unit = missionNamespace getVariable (_bastard_array select _i);
 		_fcnt = 0;
 		_ecnt = 0;
 		{
@@ -135,5 +177,6 @@ while {showmarkers} do {
 			};
 		};
 	};
-	sleep 1;
+  
+	sleep 1;  
 };

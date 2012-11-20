@@ -17,6 +17,4 @@ client_respawnDialog = compile preprocessFileLineNumbers "core\client_respawnDia
 client_respawnAction = compile preprocessFileLineNumbers "core\client_respawnAction.sqf";
 client_spawnStuff = compile preprocessFileLineNumbers "core\client_spawnStuff.sqf";
 
-fnc_hud = compile preprocessFile "server\core\scripts\functions\fnc_hud.sqf";
-
 client_compiledScripts = true;

@@ -1,5 +1,35 @@
 player createDiarySubject ["404games", "404Games Information"];
+player createDiarySubject ["changelog", "404Games Change Log"];
 player createDiarySubject ["wasteland", "What is Wasteland?"];
+
+player createDiaryRecord["changelog",
+[
+"1.3a",
+"
+<br/>
+	[Added] - New Vehicle Hud, So when you are in a vehicle with others it will say who you are with.<br/>
+	[Added] - New Administration Features.<br/>
+	[Added] - Server Now Using BEC.<br/>
+	[Added] - Planes back in.<br/>
+	[Fixed] - Some performance issues e.g. server low fps and crashing.<br/>
+	
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.4",
+"
+<br/>
+	[Added] - Health to the Player Hud, So you can see your health points.<br/>
+	[Added] - General Stores to the server, You will be able to buy general items e.g. Food, Water<br/>
+	[Added] - More Administrator Options.<br/>
+	[Fixed] - Player team tags more visible and no longer don't disappear randomly.<br/>
+	
+"
+]
+];
 
 player createDiaryRecord["404games",
 [
@@ -50,8 +80,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.3<br/>
-	Build Date: 05/11/2012 17:30:00
+	Server Version: v1.3a<br/>
+	Build Date: 11/11/2012 17:30:00
 "
 ]
 ];

@@ -37,7 +37,8 @@ class Mission
 		"caair_e_an2",
 		"CATracked",
 		"caair_e",
-		"CAAir2_C130J"
+		"CAAir2_C130J",
+		"CAWheeled"
 	};
 	addOnsAuto[]=
 	{
@@ -58,8 +59,8 @@ class Mission
 	randomSeed=9922807;
 	class Intel
 	{
-		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.3";
-		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.3";
+		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.4";
+		briefingDescription="Wasteland - Made By Tonic. Edited By 404Games v1.4";
 		resistanceWest=0;
 		startWeather=0;
 		forecastWeather=0;
@@ -71,7 +72,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=128;
+		items=133;
 		class Item0
 		{
 			side="LOGIC";
@@ -138,7 +139,7 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={8336.7373,25.984215,3336.0605};
+					position[]={8335.2031,25.857935,3335.4927};
 					azimut=328.64359;
 					id=3;
 					side="LOGIC";
@@ -183,7 +184,6 @@ class Mission
 					id=9;
 					side="WEST";
 					vehicle="FR_AC";
-					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
 					text="blufor1";
@@ -2746,10 +2746,110 @@ class Mission
 				};
 			};
 		};
+		class Item128
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={10427.027,10.748408,2366.4006};
+					azimut=328.64359;
+					id=156;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore1";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp5,[0,-3,0]];";
+				};
+			};
+		};
+		class Item129
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6016.0107,305.79456,7815.5566};
+					azimut=328.64359;
+					id=157;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore2";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp6,[0,-3,0]];";
+				};
+			};
+		};
+		class Item130
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2586.0693,198.74002,5063.9194};
+					azimut=328.64359;
+					id=158;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore3";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp7,[0,-3,0]];";
+				};
+			};
+		};
+		class Item131
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={11249.045,194.08,12208.52};
+					azimut=328.64359;
+					id=159;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore4";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp8,[0,-3,0]];";
+				};
+			};
+		};
+		class Item132
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={10634.965,215.50311,8020.8521};
+					azimut=328.64359;
+					id=160;
+					side="LOGIC";
+					vehicle="TK_CIV_Takistani04_EP1";
+					leader=1;
+					skill=0.60000002;
+					text="generalStore5";
+					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp9,[0,-3,0]];";
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=22;
+		items=28;
 		class Item0
 		{
 			position[]={8342.751,26.983168,3343.3755};
@@ -2964,27 +3064,103 @@ class Mission
 			vehicle="An2_2_TK_CIV_EP1";
 			lock="UNLOCKED";
 			skill=0.60000002;
-			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""server\core\scripts\3rdParty\vehicle.sqf""";
+			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
 		};
 		class Item20
 		{
-			position[]={4755.3511,8.7569866,2591.6042};
-			azimut=210;
-			id=148;
-			side="EMPTY";
-			vehicle="An2_2_TK_CIV_EP1";
-			skill=0.60000002;
-			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""server\core\scripts\3rdParty\vehicle.sqf""";
-		};
-		class Item21
-		{
 			position[]={11780.455,158.88177,12832.665};
 			azimut=110;
-			id=149;
+			id=148;
 			side="EMPTY";
 			vehicle="C130J_US_EP1";
 			skill=0.60000002;
-			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""server\core\scripts\3rdParty\vehicle.sqf""";
+			init="veh = [this, 2400, 2400, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
+		};
+		class Item21
+		{
+			position[]={10424.907,10.747202,2367.6357};
+			azimut=-53.868099;
+			special="NONE";
+			id=149;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp5";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
+		};
+		class Item22
+		{
+			position[]={6013.9927,305.79456,7816.7412};
+			azimut=-53.868099;
+			special="NONE";
+			id=150;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp6";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
+		};
+		class Item23
+		{
+			position[]={2587.6858,198.74002,5064.8896};
+			azimut=53.868099;
+			special="NONE";
+			id=151;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp7";
+			init="this setVariable [""R3F_LOG_disabled"", true]; this setVectorUp [0,-0.1,1];";
+		};
+		class Item24
+		{
+			position[]={11249.974,194.08,12208.114};
+			azimut=115.8681;
+			special="NONE";
+			id=152;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp8";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item25
+		{
+			position[]={10635.894,215.50311,8020.4468};
+			azimut=210.868;
+			special="NONE";
+			id=153;
+			side="EMPTY";
+			vehicle="Land_Campfire_burning";
+			leader=1;
+			skill=0.60000002;
+			text="fp9";
+			init="this setVariable [""R3F_LOG_disabled"", true];";
+		};
+		class Item26
+		{
+			position[]={4843.5298,339.08075,10214.273};
+			azimut=240;
+			id=154;
+			side="EMPTY";
+			vehicle="An2_2_TK_CIV_EP1";
+			lock="UNLOCKED";
+			skill=0.60000002;
+			init="veh = [this, 3600, 3600, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
+		};
+		class Item27
+		{
+			position[]={11782.098,158.81609,12831.228};
+			azimut=112.16474;
+			id=155;
+			side="EMPTY";
+			vehicle="An2_2_TK_CIV_EP1";
+			skill=0.60000002;
+			init="veh = [this, 3600, 3600, 0, FALSE, FALSE] execVM ""vehicle.sqf""";
 		};
 	};
 	class Markers

@@ -25,6 +25,7 @@ player addEventHandler ["Respawn", {[_this] call onRespawn;}];
 player addEventHandler ["Killed", {[_this] call onKilled;}];
 player addEventHandler ["Hit", {[_this] call onHit}];
 player addEventHandler ["fired", {[_this] call onFired}];
+player addEventHandler ["GetIn", {[_this] call onGetIn;}];
 
 if(!(playerSide in [west, east, resistance])) then {
 	endMission "LOSER";
@@ -88,7 +89,8 @@ client_missionsMarkers = [];
 "publicVar_doTest" addPublicVariableEventHandler {[] execVM "_wtf.sqf";};
 
 [] execVM "core\init_survival.sqf";
-	
+
+/*
 keysDown = compile preprocessFile "core\misc\keyHandler.sqf";
 [] spawn {
 	private ["_display"];
@@ -102,6 +104,11 @@ keysDown = compile preprocessFile "core\misc\keyHandler.sqf";
 	};
 	_display displaySetEventHandler ["KeyDown", "_this call keysDown"];
 };
+*/
+
+onKeyPress = compile preprocessFile "core\misc\onKeyPress.sqf";
+waituntil {!(IsNull (findDisplay 46))};
+(findDisplay 46) displaySetEventHandler ["KeyDown", "_this call onKeyPress"];
 
 if(getNumber(configFile >> "CfgVehicles" >> (typeOf player) >> "canCarryBackPack") != 1) then {
 	player addEventHandler ["WeaponDisassembled", {
@@ -109,6 +116,7 @@ if(getNumber(configFile >> "CfgVehicles" >> (typeOf player) >> "canCarryBackPack
 		player sideChat "https://dev-heaven.net/issues/37569";
 	}];
 };
+
 
 client_initComplete = true;
 
@@ -119,7 +127,7 @@ client_initComplete = true;
 [] execVM "core\client_playerIcons.sqf";
 [] execVM "core\misc\client_teleportCheck.sqf";
 [] execVM "core\misc\client_treesCheck.sqf";
-[] spawn fnc_hud;
+[] execVM "core\misc\fnc_hud.sqf";
 
 [] spawn {
 	while{true} do {

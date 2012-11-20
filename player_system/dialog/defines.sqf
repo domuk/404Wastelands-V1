@@ -11,3 +11,11 @@
 #define gunshop_mag_list 2011
 #define gunshop_mag_pic 2012
 #define gunshop_gun_pic_small 2013
+
+// General store definitions
+#define genshop_dialog 2014
+#define genshop_money 2015
+#define genshop_item_text 2016
+#define genshop_item_picture 2017
+#define genshop_item_info 2018
+#define genshop_item 2019

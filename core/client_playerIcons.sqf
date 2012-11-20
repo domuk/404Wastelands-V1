@@ -83,7 +83,8 @@ while{dotest} do {
 		if(!isNil{_unit} && !visibleMap) then {
 			_dst = _unit distance player;
 			//_test = format ["%1\nu:%2, a:%3, p:%4, d:%5, i:%6", _test, _unit, (alive _unit), (_unit != player), (_dst < 1000), (unitsIntersect select _i)];
-			if((alive _unit) && (_unit != player) && (_dst < 1000) && !(unitsIntersect select _i)) then {
+                        //&& !(unitsIntersect select _i)
+			if((alive _unit) && (_unit != player) && (_dst < 1000)) then {
 				_pos = getPosATL _unit;
 				if(surfaceIsWater (getPos _unit)) then {_pos = getPosASL _unit;};
 				if((vehicle player) == (vehicle _unit)) then {_dst = 0;};
@@ -98,12 +99,12 @@ while{dotest} do {
 					_sx = _screen select 0;
 					_sy = _screen select 1;
 					_scale = 1 min ((1 - ((_dst) - 3) / 15) max 0.4);
-					if(_dst > 100) then {_scale = 0.2;};
+					if(_dst > 100) then {_scale = 0.4;};
 
 					_control = _display displayCtrl (icons_idc + _i);
 					_control ctrlSetPosition [_sx, _sy, 0.03, 0.04];
 					_control ctrlSetScale _scale;
-					_control ctrlSetFade 0.7;
+					_control ctrlSetFade 0.0;
 					_control ctrlCommit 0;
 					_good = true;
 					waituntil {ctrlCommitted _control};

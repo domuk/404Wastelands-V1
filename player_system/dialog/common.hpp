@@ -78,81 +78,90 @@ class w_RscText {
 	idc = -1;
 	type = CT_STATIC;
 	style = ST_LEFT;
-	
 	colorBackground[] = { 1 , 1 , 1 , 0 };
 	colorText[] = { 1 , 1 , 1 , 1 };
-	
 	font = FontM;
 	sizeEx = 0.025;
-	
 	h = 0.05;
-	
 	text = "";
-	
+};
+
+class w_RscBackground
+{
+
+    colorBackground[] = {0.14, 0.18, 0.13, 0.8};
+    text              = "";
+    type              = CT_STATIC;
+    idc               = -1;
+    style             = ST_LEFT;
+    colorText[]       = {1, 1, 1, 1};
+    font              = FontM;
+    sizeEx            = 0.04;
 };
 
 class w_RscEdit
-  {
-  	idc = -1;
-  	type = CT_EDIT;
-  	style = ST_LEFT;
-  	x = 0;
-  	y = 0;
-  	w = .2;
-  	h = .4;
-  	sizeEx = .02;
-  	font = FontM;
-  	
-  	text = "";
-  	colorText[] = {1,1,1,1};
-  	
-  	autocomplete = false;
-  	colorSelection[] = {0,0,0,1};
-  };
+{
+    idc = -1;
+    type = CT_EDIT;
+    style = ST_LEFT;
+    x = 0;
+    y = 0;
+    w = .2;
+    h = .4;
+    sizeEx = .02;
+    font = FontM;
+
+    text = "";
+    colorText[] = {1,1,1,1};
+
+    autocomplete = false;
+    colorSelection[] = {0,0,0,1};
+};
 
 class w_Rsclist
-	{
-		type = CT_LISTBOX;
-		style = 69;
-		idc = -1;
-		text = "";
-		w = 0.275;
-		h = 0.04;
-		colorSelect[] = {1, 1, 1, 1};
-		colorText[] = {1, 1, 1, 1};
-		colorBackground[] = {1,1,1,1};
-		colorSelectBackground[] = {0.40, 0.43, 0.28, 0.5};
-		colorScrollbar[] = {0.2, 0.2, 0.2, 1};
-		arrowEmpty = "\ca\ui\data\ui_arrow_combo_ca.paa";
-		arrowFull = "\ca\ui\data\ui_arrow_combo_active_ca.paa";
-		wholeHeight = 0.45;
-		rowHeight = 0.04;
-		color[] = {0.7, 0.7, 0.7, 1};
-		colorActive[] = {0,0,0,1};
-		colorDisabled[] = {0,0,0,0.3};
-		font = "Zeppelin32";
-		sizeEx = 0.023;
-		soundSelect[] = {"",0.1,1};
-		soundExpand[] = {"",0.1,1};
-		soundCollapse[] = {"",0.1,1};
-		maxHistoryDelay = 1;
-		autoScrollSpeed = -1;
-		autoScrollDelay = 5;
-		autoScrollRewind = 0;
+{
+        type = CT_LISTBOX;
+        style = 69;
+        idc = -1;
+        text = "";
+        w = 0.275;
+        h = 0.04;
+        colorSelect[] = {1, 1, 1, 1};
+        colorText[] = {1, 1, 1, 1};
+        colorBackground[] = {1,1,1,1};
+        colorSelectBackground[] = {0.40, 0.43, 0.28, 0.5};
+        colorScrollbar[] = {0.2, 0.2, 0.2, 1};
+        arrowEmpty = "\ca\ui\data\ui_arrow_combo_ca.paa";
+        arrowFull = "\ca\ui\data\ui_arrow_combo_active_ca.paa";
+        wholeHeight = 0.45;
+        rowHeight = 0.04;
+        color[] = {0.7, 0.7, 0.7, 1};
+        colorActive[] = {0,0,0,1};
+        colorDisabled[] = {0,0,0,0.3};
+        font = "Zeppelin32";
+        sizeEx = 0.023;
+        soundSelect[] = {"",0.1,1};
+        soundExpand[] = {"",0.1,1};
+        soundCollapse[] = {"",0.1,1};
+        maxHistoryDelay = 1;
+        autoScrollSpeed = -1;
+        autoScrollDelay = 5;
+        autoScrollRewind = 0;
 
-		class ScrollBar
-		{
-			color[] = {1, 1, 1, 1};
-			colorActive[] = {1, 1, 1, 1};
-			colorDisabled[] = {1, 1, 1, 1};
-			thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa";
-			arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
-			arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
-			border = "\ca\ui\data\ui_border_scroll_ca.paa";
-		};
-	};
+        class ScrollBar
+        {
+                color[] = {1, 1, 1, 1};
+                colorActive[] = {1, 1, 1, 1};
+                colorDisabled[] = {1, 1, 1, 1};
+                thumb = "\ca\ui\data\ui_scrollbar_thumb_ca.paa";
+                arrowFull = "\ca\ui\data\ui_arrow_top_active_ca.paa";
+                arrowEmpty = "\ca\ui\data\ui_arrow_top_ca.paa";
+                border = "\ca\ui\data\ui_border_scroll_ca.paa";
+        };
+};
 
-class w_RscPicture {
+class w_RscPicture 
+{
 
 	idc = -1; 
 	type = CT_STATIC;
@@ -311,6 +320,38 @@ class w_RscButton : w_RscButtonBase {
 		shadow = "true";
 		
 	};
+};
+
+class RscButton
+{
+
+    type                      = CT_BUTTON;
+    idc                       = -1;
+    style                     = ST_CENTER;
+    colorText[]               = {1, 1, 1, 1};
+    font                      = "Zeppelin32";
+    sizeEx                    = 0.025;
+    soundPush[]               = {"", 0.2, 1};
+    soundClick[]              = {"ui\ui_ok", 0.2, 1};
+    soundEscape[]             = {"ui\ui_cc", 0.2, 1};
+    default                   = false;
+    text                      = "";
+    action                    = "";
+    colorActive[]             = {0, 0, 0, 0};
+    colorDisabled[]           = {0, 0, 0, 0.1};
+    colorBackground[]         = {0.8,0.8,0.8,0.3};
+    colorBackgroundActive[]   = {0.7,0.7,0.7,1};
+    colorBackgroundDisabled[] = {1,1,1,0.5};
+    colorFocused[]            = {0.84,1,0.55,1};
+    colorShadow[]             = {0, 0, 0, 0.1};
+    colorBorder[]             = {1, 1, 1, 0.1};
+    offsetX                   = 0;
+    offsetY                   = 0;
+    offsetPressedX            = 0;
+    offsetPressedY            = 0;
+    borderSize                = 0;
+    soundEnter[]              = {"", 0.15, 1};
+
 };
 
 class w_RscCombo {
