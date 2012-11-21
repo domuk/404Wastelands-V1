@@ -13,7 +13,11 @@ How To Host Wastelands
 ----------------------
 
 Note: We have a simple kit you can download with everything pre-compiled and ready to just to be pasted on to your arma2 server.
+
 1) Download the mission by clicking "ZIP" then you need to use a tool such as cPBO to compile the mission.
+
 2) You need to setup Arma2Net - http://forums.bistudio.com/showthread.php?131325-Arma2NET
+
 3) Setup your server.cfg to load the mission.
+
 4) Away you go.
