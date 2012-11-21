@@ -12,7 +12,7 @@ Wasteland is a survival sandbox mission with hunger and thirst. Where you can bu
 How To Host Wastelands
 ----------------------
 
-Note: We have a simple kit you can download with everything pre-compiled and ready to just to be pasted on to your arma2 server.
+Note: We have a simple kit you can download with everything pre-compiled and ready to just to be pasted on to your arma2 server. http://www.404games.co.uk/wastelands
 
 1) Download the mission by clicking "ZIP" then you need to use a tool such as cPBO to compile the mission.
 
