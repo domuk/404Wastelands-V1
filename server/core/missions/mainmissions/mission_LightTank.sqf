@@ -6,11 +6,11 @@ diag_log format["WASTELAND SERVER - Mission Started"];
 private ["_rad","_cnps","_hills","_hillcount","_hillnum","_hill","_marker","_boxes","_numb","_boxnum","_box","_picture","_name","_text","_color","_tempPlayer"];
 
 _rad=20000;
+_result = 0;
 _missionTimeOut = 20;
 _missionDelayTime = 10;
 _missionTriggerRadius = 100;
 _missionPlayerRadius = 50;
-_temptime = 0;
 _color = "#C5C5C5";
 _cnps = getArray (configFile >> "CfgWorlds" >> worldName >> "centerPosition");
 _hills = nearestLocations [_cnps, ["FlatArea"], _rad];
@@ -146,7 +146,7 @@ waitUntil
 
 tank setVehicleLock "UNLOCKED";
 
-if(_temptime >= _missionTimeOut) then
+if(_result == 1) then
 {
     tank setDamage 1;
     _text2 = parseText format ["<t align='center' color='#FF0000' shadow='1' shadowColor='#000000' size='1.5'>Main Objective Failed</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#666c3f' shadow='1' shadowColor='#000000'><t color='%3'><img size='4' image='%2'/></t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>No players captured the <t color='#FFCC33'>%1</t>. It was destroyed by the enemy.</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Try harder next time.</t>",   _name, _picture, _color ];

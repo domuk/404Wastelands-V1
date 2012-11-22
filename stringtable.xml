@@ -32,7 +32,7 @@
 	</Package>
 	<Package name="Loading">
 		<Key ID="STR_WL_Loading_Teamkiller">
-			<English>You are considered teamkiller and not allowed in BLUFOR or OPFOR teams. Please go back into lobby and join Independent where killing anyone is allowed.</English>
+			<English>You are considered teamkiller and not allowed in BLUFOR or OPFOR teams. You will shortly be kicked back to the lobby where you can only join Independent and killing anyone is allowed.</English>
 			<Russian>Из-за ваших убийств товарищей по команде, доступ в команды Красных или Синих вам закрыт. Вернитесь в лобби и выберите команду Независимых, в ней разрешено убивать всех.</Russian>
 		</Key>
 		<Key ID="STR_WL_Loading_Teamswitched">
@@ -60,10 +60,9 @@
 			<English>&lt;t color='#FFFFFF' size='1.5' &gt;Website: www.404games.co.uk&lt;br/&gt;TS3: ts.404games.co.uk:9988&lt;br/&gt;Server Restart Times: 6AM/6PM (GMT)&lt;br/&gt;For More Info Please See The Map&lt;br/&gt;&lt;br/&gt;&lt;/t&gt;</English>
 		</Key>
 	</Package>
-	<Package name="TeamkillMessage">
-		<Key ID="STR_WL_TeamkillMessage">
-			<English>&lt;t size='2.5' color='#ff0000'&gt;Teamkilling is forbidden under any reason!&lt;/t&gt;&lt;br/&gt;You have killed your teammate which is against rules. If this was a mistake then &lt;t color='#8888ff'&gt;you must explain yourself and say sorry&lt;/t&gt;, otherwise they will mark you as teamkiller and you will get kicked. Teamkilling is forbidden under any reason, no matter what somebody said or did, teamkiller is always guilty and teamkilling will get you permabanned on our servers!</English>
-			<Russian>&lt;t size='2.2' color='#ff0000'&gt;Убивать своих запрещено при любых обстоятельствах!&lt;/t&gt;&lt;br/&gt;Вы убили игрока из своей команды, тем самым нарушив правила. Если это произошло случайно, &lt;t color='#8888ff'&gt;объяснитесь и принесите свои извинения&lt;/t&gt; этому игроку, иначе он пометит вас как тимкиллера и вы будете исключены из игры. Убивать своих запрещено при любых обстоятельствах, не важно кто что сделал или сказать, убийца своих всегда виновник и за тимкиллы вы получите вечный бан на наших серверах</Russian>
+	<Package name="TeamKillWarningMessage">
+		<Key ID="STR_TK_MESSAGE">
+			<English>&lt;t size='2' color='#ff0000'&gt;Team killing is against the rules!&lt;/t&gt;&lt;br/&gt;If this was a mistake then you must explain yourself and say sorry, otherwise they will mark you as teamkiller and you will get kicked.</English>
 		</Key>
 	</Package>
 	<Package name="Diary">
@@ -72,7 +71,7 @@
 			<Russian>*ПРАВИЛА СЕРВЕРА</Russian>
 		</Key>
 		<Key ID="STR_WL_Diary_RulesContent">
-			<English>&lt;br/&gt;    1. No foul language against other player&lt;br/&gt;    2. Do not use Global Chat to speak with one person or your team through VON. At least use Side Channel or get into Skype\Teamspeak\etc.&lt;br/&gt;    3. Team killing or stealing from team mates when you BLUFOR or OPFOR is forbidden and punishable. Play as Independent if you want to be free for all.&lt;br/&gt;    4. Revealing information about your (ex)team to other teams is strictly forbidden&lt;br/&gt;    5. Abusing R3F and using ladders to fly will cause punishment up to permaban&lt;br/&gt;    6. Using or spamming with loud\long custom sound commands will cause punishment up to permaban</English>
+			<English>&lt;br/&gt;    1. Keep bad language to a minimum. If you have a problm with another player, take it to direct.&lt;br/&gt;    2. NO VOIP IN GLOBAL. We have a public teamspeak for players to use.&lt;br/&gt;    3. Team killing or stealing from team mates when you BLUFOR or OPFOR is forbidden and punishable. Play as Independent if you want to be free for all.&lt;br/&gt;    4. Revealing information about your (ex)team to other teams is strictly forbidden&lt;br/&gt;    5. Do not exploit R3F or any other addons or you will be banned.&lt;br/&gt;    6. Using or spamming with loud\long custom sound commands will cause punishment up to permaban</English>
 			<Russian>&lt;br/&gt;    1. Запрещено грубо оскорблять или материться на других игроков&lt;br/&gt;    2. Нельзя использовать Общий Канал для голосового общения с один человеком или вашей группой. Как минимум говорите в Доп. канал или заведите Skype\Teamspeak\т.д.&lt;br/&gt;    3. Запрещено убийство товарищей по команде, воровство их вещей или техники. Замеченные случае преднамеренного нарушения этого правила будут наказаны. Если вы хотите играть сами по себе и убивать всех, зайдите за команду "Независимые".&lt;br/&gt;    4. Запрещено сливать информацию о своей (бывшей) команде другим командам: нарушения будут строго наказываться.&lt;br/&gt;    5. Использование скриптов переноса R3F для полета не лестницах запрещено и будет наказываться вплоть до бана&lt;br/&gt;    6. Использование или спам громких\долгих звуковых команд запрещено и будет наказываться вплось до бана</Russian>
 		</Key>
 
@@ -95,27 +94,6 @@
 		<Key ID="STR_WL_Diary_ChangelogChanged">
 			<English>&lt;font color="#aaaaff"&gt;[Changed]&lt;/font&gt;</English>
 			<Russian>&lt;font color="#aaaaff"&gt;[Изменено]&lt;/font&gt;</Russian>
-		</Key>
-
-		<Key ID="STR_WL_Diary_Changelog6">
-			<English>%1 Welcome message with brief description of your role&lt;br/&gt;%1 Icons above BLUFOR and OPFOR teammates&lt;br/&gt;&lt;br/&gt;%2 Randomly placed money flew into sky&lt;br/&gt;%2 Corpses\wrecks cleanup didn't work&lt;br/&gt;%2 No messages when interacting with objects&lt;br/&gt;%2 All V3S kinds are now towable&lt;br/&gt;&lt;br/&gt;%3 More cars spawn over time in cities&lt;br/&gt;%3 More obstacles near gun stores&lt;br/&gt;%3 Even less fortifications in buildings</English>
-			<Russian>%1 Приветственное сообщение с кратким описанием вашей цели&lt;br/&gt;%1 Иконки над головами игроков из вашей команды (Если вы Красные или Синие)&lt;br/&gt;&lt;br/&gt;%2 Деньги, случайное разбросанные по карте улетали в небо&lt;br/&gt;%2 Трупы\обломки не удалялись сами по себе&lt;br/&gt;%2 Не было сообщений при взаимодействии с предметами&lt;br/&gt;%2 Теперь все виды V3S можно тягать&lt;br/&gt;&lt;br/&gt;%3 Больше машин появляется со временем игры в городах&lt;br/&gt;%3 Больше препятсвий в магазинах&lt;br/&gt;%3 Еще меньше случайных стенок в городах</Russian>
-		</Key>
-		<Key ID="STR_WL_Diary_Changelog7">
-			<English>%1 Vehicles that doesn't have fuel or cannot move (broken wheel) now get deleted regularly&lt;br/&gt;%1 Mission bases that don't get occupied by players delete over time&lt;br/&gt;%1 Grenades and mines in gun stores&lt;br/&gt;%1 Forgive \ Punish options when you get teamkilled as BLUFOR or OPFOR&lt;br/&gt;%1 NW airfield is now guarded&lt;br/&gt;%1 Loot in buildings respawn over time&lt;br/&gt;%1 "Capture repair truck" mission&lt;br/&gt;&lt;br/&gt;%2 Player Menu no longer appears on your dead body&lt;br/&gt;%2 All randomly spawned vehicles are now rearmable&lt;br/&gt;%2 No more stretched images of pistols and equipment in gun store&lt;br/&gt;%2 Weapons spawn again in "Capture Vehicle" vehicle&lt;br/&gt;%2 Message explaining why you get kicked out of "Capture Vehicle" vehicle now works properly&lt;br/&gt;&lt;br/&gt;%3 Having fuel barrels near "Capture Vehicle" vehicle stops you being kicked out of vehicle&lt;br/&gt;%3 R3F configs rearranged and cleaned up, should provide better performance&lt;br/&gt;%3 Geo cache mission now completes when first player reaches the crate</English>
-			<Russian>%1 Переодически удаляется техника без топлива или не способная двигаться (без колес)&lt;br/&gt;%1 Базы оставшиеся от миссий удаляются, если в них не обосновываются игроки&lt;br/&gt;%1 Мины и гранаты теперь продаются в магазине&lt;br/&gt;%1 Возможность наказать или простить игрока из вашей команды, убившего вас (Если вы Красный или Синий)&lt;br/&gt;%1 Патрули на СЗ аэропорту&lt;br/&gt;%1 Лут в домах постепенно появляется заново&lt;br/&gt;%1 Миссия "Захватить ремонтный грузовик"&lt;br/&gt;&lt;br/&gt;%2 Меню игрока больше не остается опцией на вашем трупе&lt;br/&gt;%2 Теперь вся техника должна быть перезаряжаема с помощью грузовика с патронами&lt;br/&gt;%2 Исправлена растянутые картинки пистолетов и снаряжения в магазине оружия&lt;br/&gt;%2 Оружие снова появляется в технике на миссии "Захват техники"&lt;br/&gt;%2 Теперь работает сообщение о причине того, почему вас выкидывает из техники на миссии "Захват техники"&lt;br/&gt;&lt;br/&gt;%3 Если рядом с техникой на миссии "Захват техники" стоит бочка топлива, то вас больше не будет выкидывать из техники.&lt;br/&gt;%3 Конфиги R3F переработаны и должны давать меньше нагрузки на клиент&lt;br/&gt;%3 Миссия "Гео кеш" теперь выполняется сразу как только до ящика добирается игрок</Russian>
-		</Key>
-		<Key ID="STR_WL_Diary_Changelog8">
-			<English>This is cumulative update which grew from v7+ version&lt;br/&gt;&lt;br/&gt;%1 Mi-24 added to "Capture Helicopter" mission&lt;br/&gt;%1 AI units will never leave their vehicles&lt;br/&gt;%1 New objects for construction (Takistani wall, scaffolding)&lt;br/&gt;%1 All gun stores are now located inside small shacks for better protection&lt;br/&gt;%1 You can now carry Bikes, Motorcycles and ATVs in hands&lt;br/&gt;%1 Big bunkers and objects are towable&lt;br/&gt;%1 You now can choose spawn place&lt;br/&gt;&lt;br/&gt;%2 Fixed bug with "Geo Cache" which let you get the crate without triggering mission end&lt;br/&gt;%2 Fixed bug which caused objects to float hight in air when placed on top of buildings&lt;br/&gt;%2 Objects sometimes were impossible to pick up inside buildings&lt;br/&gt;%2 Player no longer switch pistol back and forth when walking too fast while holding object&lt;br/&gt;&lt;br/&gt;%3 Howitzers no longer spawn on AI units bases&lt;br/&gt;%3 Powerful vehicles like BMP2 can no longer spawn right away on server restart&lt;br/&gt;%3 AI guards no longer have BRDM2 and M113 vehicles</English>
-			<Russian>Это кумулятивное обновление, содержащее в себе функционал из версии v7+&lt;br/&gt;&lt;br/&gt;%1 Ми-24 добавлен в миссию "Захват вертолета"&lt;br/&gt;%1 Теперь боты не покидают поврежденную технику&lt;br/&gt;%1 Магазины оружия теперь располагаются в небольших домиках&lt;br/&gt;%1 Велосипеды, мотоциклы и квадроциклы можно носить в руках&lt;br/&gt;%1 Большие объекты и бункера можно привязывать к технике&lt;br/&gt;%1 Возможность выбора места возрождения&lt;br/&gt;&lt;br/&gt;%2 Исправлен баг с миссий "Гео кэш", когда можно было забрать ящик и миссия все равно продолжалась бы&lt;br/&gt;%2 Исправлена ошибка, когда объекты оказывались высоко в воздухе, будучи поставленными на крыши зданий&lt;br/&gt;%2 Некоторые объекты нельзя было взять в инвентарь, когда они находились внутри зданий&lt;br/&gt;%2 Игрок больше не прячет и сразу достает пистолет, когда движется слишком быстро с объектом в руках&lt;br/&gt;&lt;br/&gt;%3 Гаубицы больше не появляются на базах ботов&lt;br/&gt;%3 Мощная боевая техника вроде БМП2 больше не может появиться после старта сервера&lt;br/&gt;%3 Ботам больше не выдаются БРДМ2 и М113</Russian>
-		</Key>
-		<Key ID="STR_WL_Diary_Changelog9">
-			<English>%1 Mission uptime timer in player menu&lt;br/&gt;%1 Loot in cars in cities gets replenished over time&lt;br/&gt;%1 New gunstore system which has no "No shooting zones" but lets you know if there are enemies in gun store&lt;br/&gt;%1 Few new bases for missions&lt;br/&gt;%1 New "Release (horizontal)" feature which lets you put objects horizontally&lt;br/&gt;%1 Wildcat AH11 added to "Capture Helicopter" mission&lt;br/&gt;&lt;br/&gt;%2 You can no longer punch (Shift+F) friendly players&lt;br/&gt;%2 Having fuel truck near "Capture vehicle" vehicle no longer kicks you out of vehicle&lt;br/&gt;%2 Placing objects on water no longer places them underwater&lt;br/&gt;%2 Fixed problem when sometimes icons didn't appear over friendly players&lt;br/&gt;&lt;br/&gt;%3 Explosives placed near gun stores get deleted instantly&lt;br/&gt;%3 You no longer need to get into driver seat before refueling&lt;br/&gt;%3 Fuel and Repair trucks now spawn randomly across the map and no longer appear on "Capture truck" missions&lt;br/&gt;%3 Independents now have 4 sniper roles. Roles with halved inventory removed.</English>
-			<Russian>%1 Время работы миссии в Player Menu&lt;br/&gt;%1 Лут пополняется в машинах в городах со временем&lt;br/&gt;%1 Новая система магазинов без киков за стрельбу, показывающая на карте врагом или союзников в магазине&lt;br/&gt;%1 Пара новых баз для миссий&lt;br/&gt;%1 Новая функция "Release (horizontal)", которая ставит объект горизонтально, а не по наклону ландшафта&lt;br/&gt;%1 Вертолет Wildcat AH11 в миссии "Захват вертолета"&lt;br/&gt;&lt;br/&gt;%2 Бить своих через Shift+F больше нельзя&lt;br/&gt;%2 Если рядом с техникой из миссии по захвату техники есть заправочный грузовик, вас больше не будет выкидывать из нее&lt;br/&gt;%2 Установка объектов на воде больше не ставит их под водой на дне&lt;br/&gt;%2 Исправлена проблема, когда над дружественными игроками не было иконок&lt;br/&gt;&lt;br/&gt;%3 Взрывчатка установленная около магазинов автоматически удаляется&lt;br/&gt;%3 Садиться на место водителя больше не требуется для заправки техники&lt;br/&gt;%3 Топливные и ремонтные грузовики спавнятся случайно на карте и больше не появляются в миссии захвата грузовика&lt;br/&gt;%3 У независимых теперь есть 4 слота со снайперами. Роли с сильно обрезанными инвентарями были убраны.</Russian>
-		</Key>
-		<Key ID="STR_WL_Diary_Changelog10">
-			<English>%1 Ability to lock movable objects to avoid occasional move of these objects&lt;br/&gt;%1 Icons that indicate approximate location of shooting mortars&lt;br/&gt;%1 New huge bunkers for base building&lt;br/&gt;%1 Armed AH-6J Littlebird added to "Capture helicopter" mission&lt;br/&gt;%1 White SUV added&lt;br/&gt;&lt;br/&gt;%2 Money sometimes cannot be taken from high places&lt;br/&gt;%2 Fixed two weapons explain when moving objects&lt;br/&gt;%2 Fixed player icons over water appear too high&lt;br/&gt;%2 Fixed crate sell money exploit&lt;br/&gt;&lt;br/&gt;%3 Independent can now only spawn in random town&lt;br/&gt;%3 AEG (electric grids) script completely removed. Zones over towns represent respawn zones.&lt;br/&gt;%3 Player drops their loot when they leave the game. If player was in vehicle, loot appears in vehicle inventory.</English>
-			<Russian>%1 Возможность запирать (лочить) объекты, чтобы случайно их не передвинуть&lt;br/&gt;%1 При стрельбе с миномета на карте появляются иконки, примерно показывающие откуда ведется стрельба&lt;br/&gt;%1 Новые большие бункера для строительста&lt;br/&gt;%1 Вооруженный вертолет AH-6J добавлен в миссию захвата вертлоета&lt;br/&gt;%1 Белая расцветка SUV внедорожника&lt;br/&gt;&lt;br/&gt;%2 Деньги нельзя было поднимать, если они находились высоко на объектах&lt;br/&gt;%2 Исправлен эксплоит с двойным основным оружием при переносе объектов&lt;br/&gt;%2 Иконки игроков были слишком высоко над водой&lt;br/&gt;%2 Исправлен эксплоит на деньги при продаже ящика&lt;br/&gt;&lt;br/&gt;%3 Независимые теперь могут появляться только в случайном городе&lt;br/&gt;%3 Скрипт AEG (сети электроснабжения) был полностью убран из миссии. Зоны над городами показывают территорию респавна в городе.&lt;br/&gt;%3 Игрок сбрасывает свое оружие при выходе из игры. Если он выходит в технике, оно складывается в технику.</Russian>
 		</Key>
 	</Package>
 	<Package name="Shop">
@@ -161,21 +139,8 @@
 			<English>You have been kicked for a reserved slot</English>
 		</Key>
 		<!-- Teamkill -->
-		<Key ID="STR_WL_Dlg_TeamkillTitle">
-			<English>You have been teamkilled</English>
-			<Russian>Вас убил игрок из вашей команды</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_TeamkillText">
-			<English>Player %1 has teamkilled you which is against rules when you play as %2. If this happened by mistake and he didn't kill you on purpose, then he should apologize and you press "Forgive" button. If he didn't explain himself and killed on purpose, then you should press "Punish" button. When player gets punished twice, he will be removed from your team and will be able to play as Independent only.</English>
-			<Russian>Игрок %1 убил вас, как игрока своей команды, что против правил при игре за %2. Если произошла ошибка или он убил вас случайно, он должен извиниться, а вы нажать кнопку "Простить". Если же игрок не объяснил почему вас убил и сделал это намеренно, вы должны нажать кнопку "Наказать". После двух наказаний, игрока удалят из команды и он сможет играть только за Независимых.</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_TeamkillPunish">
-			<English>Punish</English>
-			<Russian>Наказать</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_TeamkillForgive">
-			<English>Forgive</English>
-			<Russian>Простить</Russian>
+		<Key ID="STR_WL_dialog_TeamkillText">
+			<English>You have been team-killed by %2 player %1.&lt;br/&gt;&lt;br/&gt;If this was an accident then forgive them, otherwise they should explain their actions.&lt;br/&gt;&lt;br/&gt;If the player does not explain why then select Punish or Announce.</English>
 		</Key>
 		<!-- Respawn -->
 		<Key ID="STR_WL_Dlg_RespawnTitle">
@@ -213,26 +178,6 @@
 		<Key ID="STR_WL_Dlg_RespawnTownsEtc">
 			<English>and others</English>
 			<Russian>и другие</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_Respawn0">
-			<English>Center</English>
-			<Russian>Центр</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_Respawn1">
-			<English>North-West</English>
-			<Russian>Северо-запад</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_Respawn2">
-			<English>North-East</English>
-			<Russian>Северо-восток</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_Respawn3">
-			<English>South-East</English>
-			<Russian>Юго-восток</Russian>
-		</Key>
-		<Key ID="STR_WL_Dlg_Respawn4">
-			<English>South-West</English>
-			<Russian>Юго-запад</Russian>
 		</Key>
 	</Package>
 	<Package name="Actions">

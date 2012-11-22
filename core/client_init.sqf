@@ -47,13 +47,16 @@ if(!(playerSide in [west, east, resistance])) then {
 	_obj execVM "player_system\sellCrate.sqf";
 };
 
-pTeamkiller = objNull;
+pvar_PlayerTeamKiller = objNull;
 "pvar_teamKillList" addPublicVariableEventHandler {
 	if(str(playerSide) in ["WEST", "EAST"]) then {
 		{
 			if(_x select 0 == playerUID) then {
 				if((_x select 1) >= 2) then {
-					endMission "LOSER";
+					titleText ["", "BLACK IN", 0];
+					titleText [localize "STR_WL_Loading_Teamkiller", "black"]; titleFadeOut 9999;
+                    removeAllWeapons player;
+					[] spawn {sleep 20; endMission "LOSER";};
 				};
 			};
 		} forEach pvar_teamKillList;
@@ -63,10 +66,7 @@ pTeamkiller = objNull;
 client_missionsMarkers = [];
 "publicVar_missionsMarkers" addPublicVariableEventHandler {[] call client_updateMissionsMarkers};
 
-"publicVar_paintedVehicles" addPublicVariableEventHandler {[] call client_paintVehicles};
-[] call client_paintVehicles;
-
-"publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn client_teamkillMessage;};};
+"publicVar_teamkillMessage" addPublicVariableEventHandler {if(local(_this select 1)) then {[] spawn teamkillMessage;};};
 
 "publicVar_doTest" addPublicVariableEventHandler {[] execVM "_wtf.sqf";};
 

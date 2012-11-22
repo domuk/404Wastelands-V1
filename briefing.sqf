@@ -45,11 +45,11 @@ player createDiaryRecord["changelog",
 "
 <br/>
 	[Fixed] - Fixed the missions.<br/>
-    [Fixed] - Fixed planes spawning inside eachother.<br/>
-    [Fixed] - Fixed in-game lag.<br/>
-    [Fixed] - Updated shop descriptions.<br/>
-    [Updated] - Updated beta patch.<br/> 
-    [Changed] - In-game time will start at 15:00 to allow night time play.
+	[Fixed] - Fixed planes spawning inside eachother.<br/>
+	[Fixed] - Fixed in-game lag.<br/>
+	[Fixed] - Updated shop descriptions.<br/>
+	[Updated] - Updated beta patch.<br/> 
+	[Changed] - In-game time will start at 15:00 to allow night time play.
 "
 ]
 ];
@@ -60,9 +60,9 @@ player createDiaryRecord["changelog",
 "
 <br/>
 		[Fixed] - Fixed Teamkill Punish - 2 Punishes = forced to independent.<br/>
-        [Added] - Teamswitch restriction - You will be locked to a team in 3 mins (WEST/EAST).<br/>
-        [Added] - Vehicles respawning.<br/>
-        [Added] - Server code in the mission file.<br/> 
+		[Added] - Teamswitch restriction - You will be locked to a team in 3 mins (WEST/EAST).<br/>
+		[Added] - Vehicles respawning.<br/>
+		[Added] - Server code in the mission file.<br/> 
 "
 ]
 ];
@@ -73,8 +73,25 @@ player createDiaryRecord["changelog",
 "
 <br/>
 		[Fixed] - Server performance issues.<br/>
-        [Fixed] - Vehicle cleanup.<br/>
-        [Fixed] - Team locking time which is actually 3 mins now.<br/>
+		[Fixed] - Vehicle cleanup.<br/>
+		[Fixed] - Team locking time which is actually 3 mins now.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.5b",
+"
+<br/>
+		[Changed] - Improved layout of player menu to be more intuative.<br/>
+		[Changed] - Improved rotate mechenism and added more rotate options.<br/>
+		[Changed] - Improved object locking by decreasing lock time and increasing unlock time.<br/>
+		[Changed] - Changed food and drink amounts that a player spawns with to 100 from 120.<br/>
+		[Changed] - Changed team-kill messages.<br/>
+		[Changed] - Changed team-kill dialog to be more intuative.<br/>
+		[Fixed] - Changed player rating to try and stop players going rogue.<br/>        
+		[Fixed] - Fixed mission clean up after time-out.<br/>
 "
 ]
 ];
@@ -87,9 +104,14 @@ player createDiaryRecord["404games",
 	Contributors:<br/><br/>
 	Credit to Tonic for original game-mode creation.<br/>
 	Special thanks to MarKeR [OCUK] for code modifications and advice.<br/>
-	Special thanks to Armynator for the Friendly Fire code fix.<br/><br/>
+	Special thanks to Armynator for the Friendly Fire code fix.<br/>
+	Special thanks to Hydrosim for use of their water icon.<br/>
+	Special thanks to Iconshock for use of their green apply icon.<br/>
+	Special thanks to Bohemia Interactive Studios' for their awsome game, but not so awesome scripting language.<br/>
+	Special thanks to Sa-Matra for some of his original code.<br/>
+	And finally, special thanks to everyone who has suggested features or helped us identify bugs.<br/><br/>
 	
-	Developers:<br/><br/>
+	The Team:<br/><br/>
 	Development Lead - Deadbeat<br/>
 	Senior Developer - Costlyy<br/>
 	Server Host - Domuk<br/>
@@ -128,8 +150,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.5a<br/>
-	Build Date: 20/11/2012 24:00:00
+	Server Version: v1.5b<br/>
+	Build Date: 22/11/2012 16:30:00
 "
 ]
 ];

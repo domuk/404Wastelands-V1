@@ -25,7 +25,7 @@ if(client_isDebug) then {
 _player addMagazine "17Rnd_9x19_glock17";
 _player addWeapon "glock17_EP1";
 _player selectWeapon "glock17_EP1";
-_player addrating 2000;
+_player addrating 1000000;
 _player switchMove "amovpknlmstpsraswpstdnon_gear";
 
 terminate playerMenuHandle;
@@ -43,8 +43,8 @@ playerMenuHandle = [] spawn {
 	};
 };
 
-thirstLevel = 120;
-hungerLevel = 120;
+thirstLevel = 100;
+hungerLevel = 100;
 
 _player setVariable["cmoney",200,false];
 _player setVariable["rabitmeat",0,false];

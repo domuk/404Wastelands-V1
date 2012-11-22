@@ -92,26 +92,13 @@ class playerSettings {
 		};
 
 		class distanceText : w_RscText {	
-			idc = distance_text;
-			text = "View distance:";
+			idc = view_range_text;
+			text = "View range:";
 			
 			sizeEx = 0.025;
-			
-			x = 0.018; y = 0.52;
+			x = 0.03; y = 0.40;
 			w = 0.3; h = 0.02;
-		};	
-
-		class uptimeText : w_RscText {
-			idc = uptime_text;
-			
-			sizeEx = 0.03;
-			shadow = 2;
-			text = "";
-			
-			x = 0.48; y = 0.675;
-			w = 0.3; h = 0.05;
-		};
-		
+		};			
 	};
 	
 	class controls {
@@ -150,7 +137,7 @@ class playerSettings {
 		class moneyInput: w_RscCombo {
 			idc = money_value;
 			
-			x  = 0.02; y = 0.402;
+			x = 0.35; y = 0.2;
 			w = .1; h = .030;
 		};
 		
@@ -159,7 +146,7 @@ class playerSettings {
 			text = "Drop Money";
 			onButtonClick = "[] execVM 'player_system\money_fnc.sqf'";
 			
-			x = 0.13; y = 0.4;
+			x = 0.2; y = 0.2;
 			w = 0.135; h = 0.05;
 			
 		};
@@ -176,27 +163,38 @@ class playerSettings {
 			
 		};
 
-		class distance1000Button : w_RscButton {
-			text = "1000 m";
-			onButtonClick = "setViewDistance 1000;";
+		class btnDistanceNear : w_RscButton {
+		
+			text = "Near";
+			onButtonClick = "setViewDistance 1100;";
+			
+			x = 0.02; y = 0.45;
+			w = 0.125; h = 0.05;
+		};
+
+		class btnDistanceMedium : w_RscButton {
+		
+			text = "Medium";
+			onButtonClick = "setViewDistance 2200;";
+			
+			x = 0.02; y = 0.50;
+			w = 0.125; h = 0.05;
+		};
+
+		class btnDistanceFar : w_RscButton {
+		
+			text = "Far";
+			onButtonClick = "setViewDistance 3300;";
 			
 			x = 0.02; y = 0.55;
 			w = 0.125; h = 0.05;
 		};
-
-		class distance2000Button : w_RscButton {
-			text = "2000 m";
-			onButtonClick = "setViewDistance 2000;";
+		class btnDistanceInsane : w_RscButton {
+		
+			text = "Insane";
+			onButtonClick = "setViewDistance 5000;";
 			
-			x = 0.15; y = 0.55;
-			w = 0.125; h = 0.05;
-		};
-
-		class distance3000Button : w_RscButton {
-			text = "3000 m";
-			onButtonClick = "setViewDistance 3000;";
-			
-			x = 0.28; y = 0.55;
+			x = 0.02; y = 0.60;
 			w = 0.125; h = 0.05;
 		};
 		

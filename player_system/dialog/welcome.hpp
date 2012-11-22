@@ -1,5 +1,5 @@
-#define welcome_idc 3200
-#define teamkill_info_idc 3500
+#define welcomeText 3200
+#define tkWarningText 3500
 
 class WelcomeMessage {
 	idd = -1;
@@ -10,7 +10,7 @@ class WelcomeMessage {
 	class controlsBackground {
 		class WelcomeMessage_Text:w_RscText
 		{
-			idc = welcome_idc;
+			idc = welcomeText;
 			type = CT_STRUCTURED_TEXT;
 			size = 0.028;
 			x = 0; y = 0;
@@ -22,23 +22,23 @@ class WelcomeMessage {
 	};
 };
 
-class TeamkillMessage {
+class TeamKillWarningMessage {
 	idd = -1;
 	duration = 1e+011;
-	name= "TeamkillMessage";
-	onLoad = "uiNamespace setVariable ['TeamkillMessage', _this select 0]";
+	name= "TeamKillWarningMessage";
+	onLoad = "uiNamespace setVariable ['TeamKillWarningMessage', _this select 0]";
 	
 	class controlsBackground {
-		class TeamkillMessage_Text:w_RscText
+		class TeamKillWarningMessage:w_RscText
 		{
-			idc = teamkill_info_idc;
+			idc = tkWarningText;
 			type = CT_STRUCTURED_TEXT;
 			size = (safeZoneW / 45);
 			x = (safeZoneX + (safeZoneW * 0.1)); y = (safeZoneY + (safeZoneH * 0.15));
 			w = (safeZoneW * 0.8); h = (safeZoneH * 0.7);
 			colorText[] = {1,1,1,1};
 			colorBackground[] = {0,0,0,0};
-			text = "$STR_WL_TeamkillMessage";
+			text = "$STR_TK_MESSAGE";
 			shadow = 2;
 			class Attributes {
 				align = "center";

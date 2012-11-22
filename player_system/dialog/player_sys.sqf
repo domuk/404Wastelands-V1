@@ -6,5 +6,4 @@
 #define player_list 2006
 #define money_value 2007
 #define rogue_text 2008
-#define distance_text 2009
-#define uptime_text 2010
+#define view_range_text 2009

@@ -13,10 +13,10 @@ _player call client_spawnStuff;
 	waitUntil{client_respawnDialogActive};
 	waitUntil{!client_respawnDialogActive};
 
-	if(!isNull pTeamkiller) then {
-		pDialogTeamkiller = pTeamkiller;
-		pTeamkiller = objNull;
+	if(!isNull pvar_PlayerTeamKiller) then {
+		pDialogTeamkiller = pvar_PlayerTeamKiller;
+		pvar_PlayerTeamKiller = objNull;
 
-		[] execVM "core\client_teamkillDialog.sqf";
+		[] execVM "core\createTeamKillDialog.sqf";
 	};
 };

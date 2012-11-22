@@ -1,11 +1,11 @@
-#define welcome_idc 3200
+#define welcomeText 3200
 
 10 cutrsc["WelcomeMessage", "PLAIN"];
 
 disableSerialization;
 
 _display = uiNamespace getVariable "WelcomeMessage";
-_control = _display displayCtrl welcome_idc;
+_control = _display displayCtrl welcomeText;
 
 private ["_teamrules", "_teamicon", "_teamcol"];
 switch(str(side player)) do {
