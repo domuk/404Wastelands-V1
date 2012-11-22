@@ -49,6 +49,7 @@ class Mission
 		"cacharacters_e",
 		"CACharacters_W_BAF",
 		"cacharacters_pmc",
+		"CAAir2_UH1Y",
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
@@ -58,7 +59,7 @@ class Mission
 	randomSeed=9922807;
 	class Intel
 	{
-		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5b";
+		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5c";
 		briefingDescription="Wasteland - A survival sandbox like DayZ without zombies.";
 		resistanceWest=0;
 		startWeather=0;
@@ -71,7 +72,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=132;
+		items=134;
 		class Item0
 		{
 			side="LOGIC";
@@ -2828,10 +2829,47 @@ class Mission
 				};
 			};
 		};
+		class Item132
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={7169.8926,31.497101,3761.3091};
+					azimut=57.108398;
+					id=159;
+					side="WEST";
+					vehicle="UH1Y";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
+		class Item133
+		{
+			side="WEST";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3036.1084,295.22928,11260.901};
+					azimut=57.108398;
+					id=161;
+					side="WEST";
+					vehicle="UH1Y";
+					leader=1;
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
-		items=27;
+		items=28;
 		class Item0
 		{
 			position[]={8342.751,26.983168,3343.3755};
@@ -3132,6 +3170,15 @@ class Mission
 			vehicle="Land_HBarrier_large";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
+		};
+		class Item27
+		{
+			position[]={7183.0771,28.4699,3750.114};
+			azimut=-66.1595;
+			id=160;
+			side="EMPTY";
+			vehicle="Land_HBarrier_large";
+			skill=0.60000002;
 		};
 	};
 	class Markers

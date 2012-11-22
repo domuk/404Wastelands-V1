@@ -59,10 +59,10 @@ player createDiaryRecord["changelog",
 "1.5",
 "
 <br/>
-		[Fixed] - Fixed Teamkill Punish - 2 Punishes = forced to independent.<br/>
-		[Added] - Teamswitch restriction - You will be locked to a team in 3 mins (WEST/EAST).<br/>
-		[Added] - Vehicles respawning.<br/>
-		[Added] - Server code in the mission file.<br/> 
+	[Fixed] - Fixed Teamkill Punish - 2 Punishes = forced to independent.<br/>
+	[Added] - Teamswitch restriction - You will be locked to a team in 3 mins (WEST/EAST).<br/>
+	[Added] - Vehicles respawning.<br/>
+	[Added] - Server code in the mission file.<br/> 
 "
 ]
 ];
@@ -72,9 +72,9 @@ player createDiaryRecord["changelog",
 "1.5a",
 "
 <br/>
-		[Fixed] - Server performance issues.<br/>
-		[Fixed] - Vehicle cleanup.<br/>
-		[Fixed] - Team locking time which is actually 3 mins now.<br/>
+	[Fixed] - Server performance issues.<br/>
+	[Fixed] - Vehicle cleanup.<br/>
+	[Fixed] - Team locking time which is actually 3 mins now.<br/>
 "
 ]
 ];
@@ -84,14 +84,27 @@ player createDiaryRecord["changelog",
 "1.5b",
 "
 <br/>
-		[Changed] - Improved layout of player menu to be more intuative.<br/>
-		[Changed] - Improved rotate mechenism and added more rotate options.<br/>
-		[Changed] - Improved object locking by decreasing lock time and increasing unlock time.<br/>
-		[Changed] - Changed food and drink amounts that a player spawns with to 100 from 120.<br/>
-		[Changed] - Changed team-kill messages.<br/>
-		[Changed] - Changed team-kill dialog to be more intuative.<br/>
-		[Fixed] - Changed player rating to try and stop players going rogue.<br/>        
-		[Fixed] - Fixed mission clean up after time-out.<br/>
+	[Changed] - Improved layout of player menu to be more intuative.<br/>
+	[Changed] - Improved rotate mechenism and added more rotate options.<br/>
+	[Changed] - Improved object locking by decreasing lock time and increasing unlock time.<br/>
+	[Changed] - Changed food and drink amounts that a player spawns with to 100 from 120.<br/>
+	[Changed] - Changed team-kill messages.<br/>
+	[Changed] - Changed team-kill dialog to be more intuative.<br/>
+	[Fixed] - Changed player rating to try and stop players going rogue.<br/>        
+	[Fixed] - Fixed mission clean up after time-out.<br/>
+"
+]
+];
+
+player createDiaryRecord["changelog",
+[
+"1.5c",
+"
+<br/>
+	[Added] - Release Horizontal now added to the object manipulation list.<br/>
+	[Fixed] - Towing and Load In for objects and vehicles now works.<br/>        
+	[Fixed] - Client crash when interacting general store has been fixed.<br/>
+	[Fixed] - Objects now intersect with the terrain properly and don't end up in the ground.<br/>    
 "
 ]
 ];
@@ -150,8 +163,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.5b<br/>
-	Build Date: 22/11/2012 16:30:00
+	Server Version: v1.5c<br/>
+	Build Date: 22/11/2012 22:30:00
 "
 ]
 ];
