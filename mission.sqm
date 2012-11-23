@@ -49,7 +49,6 @@ class Mission
 		"cacharacters_e",
 		"CACharacters_W_BAF",
 		"cacharacters_pmc",
-		"CAAir2_UH1Y",
 		"camisc3",
 		"caweapons_ammoboxes",
 		"cabuildings",
@@ -72,7 +71,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=133;
+		items=132;
 		class Item0
 		{
 			side="LOGIC";
@@ -2826,24 +2825,6 @@ class Mission
 					skill=0.60000002;
 					text="generalStore5";
 					init="this addEventHandler[""handledamage"", {false}]; this disableAI ""MOVE""; this DisableAI ""ANIM""; this disableAI ""FSM""; this addAction[""<t color='#ff1111'>General Store</t>"", ""player_system\createGeneral.sqf"",'g_ammo_4']; this attachTo[fp9,[0,-3,0]];";
-				};
-			};
-		};
-		class Item132
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
-					position[]={3036.1084,295.22928,11260.901};
-					azimut=57.108398;
-					id=159;
-					side="WEST";
-					vehicle="UH1Y";
-					leader=1;
-					skill=0.60000002;
 				};
 			};
 		};
