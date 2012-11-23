@@ -72,7 +72,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=134;
+		items=133;
 		class Item0
 		{
 			side="LOGIC";
@@ -2837,28 +2837,9 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={7169.8926,31.497101,3761.3091};
-					azimut=57.108398;
-					id=159;
-					side="WEST";
-					vehicle="UH1Y";
-					player="PLAY CDG";
-					leader=1;
-					skill=0.60000002;
-				};
-			};
-		};
-		class Item133
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
 					position[]={3036.1084,295.22928,11260.901};
 					azimut=57.108398;
-					id=161;
+					id=159;
 					side="WEST";
 					vehicle="UH1Y";
 					leader=1;
@@ -2869,7 +2850,7 @@ class Mission
 	};
 	class Vehicles
 	{
-		items=28;
+		items=27;
 		class Item0
 		{
 			position[]={8342.751,26.983168,3343.3755};
@@ -3170,15 +3151,6 @@ class Mission
 			vehicle="Land_HBarrier_large";
 			skill=0.60000002;
 			init="this setVariable [""R3F_LOG_disabled"", true]; this addEventHandler[""handleDamage"", {false}];";
-		};
-		class Item27
-		{
-			position[]={7183.0771,28.4699,3750.114};
-			azimut=-66.1595;
-			id=160;
-			side="EMPTY";
-			vehicle="Land_HBarrier_large";
-			skill=0.60000002;
 		};
 	};
 	class Markers
