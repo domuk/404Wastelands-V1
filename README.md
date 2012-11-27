@@ -16,15 +16,21 @@ How to host 404games wasteland missionTo run our mission file all you need is th
 
 1. Signup at the 404games website.
 2. Download The Following Files
+
 ```
 Mission+Files- 
+
 http://www.404games.co.uk/forum/index.php?app=core&module=attach&section=attach&attach_id=12
 ```
+
 ```
 Arma2Net Requirements- 
+
 http://www.microsoft.com/download/en/details.aspx?id=24872 
+
 http://www.microsoft.com/en-us/download/details.aspx?id=8328
 ```
+
 3. Extract and put the files on your server.
 4. Edit the "server.cfg" in the wastelands folder to your own liking.
 5. OPTIONAL: You can download this file which contains our ban.txt and other script catching forms for battleye. They are all set to observe, you need to look at the generated *.log files to determine who/what has been hacking. You just need to copy the *.txt files in to your batteye folder. 
