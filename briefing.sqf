@@ -120,6 +120,16 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.5e",
+"
+<br/>
+    [Fixed] - Money Duplication Bug<br/>
+"
+]
+];
+
 player createDiaryRecord["404games",
 [
 "Credits",
@@ -174,8 +184,8 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.5d<br/>
-	Build Date: 22/11/2012 22:30:00
+	Server Version: v1.5e<br/>
+	Build Date: 29/11/2012 16:30:00
 "
 ]
 ];
