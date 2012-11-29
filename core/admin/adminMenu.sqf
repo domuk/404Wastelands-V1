@@ -3,8 +3,7 @@ _start = createDialog "AdminMenu";
 #define AdminMenu 2119
 
 thingsAvailable = [
-"Player Menu",
-"Vehicle Management"
+"Player Menu"
 ];
 
 {

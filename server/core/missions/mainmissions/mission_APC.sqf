@@ -1,8 +1,6 @@
 //Armored Vehicle
 if(!isServer) exitwith {};
-sleep 10;
 diag_log format["WASTELAND SERVER - Mission Started"];
-// <editor-fold desc="Variables">
 private ["_rad","_cnps","_hills","_hillcount","_hillnum","_hill","_marker","_boxes","_numb","_boxnum","_box","_picture","_name","_text","_color","_tempPlayer"];
 
 _rad=20000;
@@ -19,7 +17,6 @@ _hillnum = floor (random _hillcount);
 _hill = _hills select _hillnum;
 _hillpos = getpos _hill;
 PlayerPresent = 0;
-// </editor-fold>
 
 _startTime = call timeInMins;
 _text6 = parseText format ["<t align='center' color='#0362f3' shadow='1' shadowColor='#000000' size='1.5'>Main Objective</t>
@@ -64,7 +61,6 @@ _picture = getText (configFile >> "cfgVehicles" >> typeOf tank >> "picture");
 _text = parseText format ["<t align='center' color='#0362f3' shadow='1' shadowColor='#000000' size='1.5'>Main Objective</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#666c3f' shadow='1' shadowColor='#000000'><t color='%3'><img size='4' image='%2'/></t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>This <t color='#FFCC33'>%1</t>, is your OBJECTIVE!</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Get to it first!</t>",   _name, _picture, _color];
 [nil,nil,rHINT,_text] call RE; 
       
-// <editor-fold desc="Units and AI">
 _group = createGroup civilian;
 //Anti Vehicle
 man = _group createunit ["Priest", [(getMarkerpos _marker select 0) + 10, getMarkerpos _marker select 1, 0], [], 0, "Form"];
@@ -107,9 +103,6 @@ man5 addWeapon "SVD";
 	[_x] execVM "core\ai_fnc.sqf";
 } foreach units _group;
 
-// </editor-fold>
-
-// <editor-fold desc="Triggers">
 _trgw=createTrigger["EmptyDetector", _hillpos]; 
 _trgw setTriggerArea[_missionPlayerRadius,_missionPlayerRadius,0,false];
 _trgw setTriggerActivation["WEST","PRESENT",true];
@@ -124,7 +117,6 @@ _trgr=createTrigger["EmptyDetector", _hillpos];
 _trgr setTriggerArea[_missionPlayerRadius,_missionPlayerRadius,0,false];
 _trgr setTriggerActivation["GUER","PRESENT",true];
 _trgr setTriggerStatements["this", "PlayerPresent = 1", "PlayerPresent = 0"]; 
-// </editor-fold>
 
 diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
 waitUntil
@@ -150,5 +142,4 @@ if(_result == 1) then
 };
 
 deleteMarker _marker;
-diag_log format["WASTELAND SERVER - Execute New Mission"];
-execVM "server\core\missions\mainmission_selector.sqf";
+MissionRunning = false;

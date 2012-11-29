@@ -1,14 +1,12 @@
 //Weapon Cache
 if(!isServer) exitwith {};
-sleep 10;
 diag_log format["WASTELAND SERVER - Mission Started"];
-// <editor-fold desc="Variables">
 private ["_rad","_cnps","_hills","_hillcount","_hillnum","_hill","_marker","_boxes","_numb","_boxnum","_box","_picture","_name","_text","_color","_tempPlayer"];
 
 _rad=20000;
 _result = 0;
-_missionTimeOut = 20;
-_missionDelayTime = 5;
+_missionTimeOut = 5;
+_missionDelayTime = 20;
 _missionTriggerRadius = 100;
 _missionPlayerRadius = 50;
 _color = "#C5C5C5";
@@ -19,7 +17,6 @@ _hillnum = floor (random _hillcount);
 _hill = _hills select _hillnum;
 _hillpos = getpos _hill;
 PlayerPresent = 0;
-// </editor-fold>
 
 _text6 = parseText format ["<t align='center' color='#0362f3' shadow='1' shadowColor='#000000' size='1.5'>Side Objective</t>
 							<t color='#FFCC33'>Starting in 5 Minutes</t>"];
@@ -48,7 +45,6 @@ box2 = createVehicle ["RUSpecialWeaponsBox",[(getpos _hill select 0), (getpos _h
 _text = parseText format ["<t align='center' color='#0362f3' shadow='1' shadowColor='#000000' size='1.5'>Side Objective</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>This <t color='#FFCC33'>Supply Drop</t>, is your OBJECTIVE!</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Be careful, there may be resistance.</t>",   _name, _picture, _color];
 [nil,nil,rHINT,_text] call RE;
 
-// <editor-fold desc="Units and AI">
 _group = createGroup civilian;
 //Anti Vehicle
 man = _group createunit ["Priest", [(getMarkerpos _marker select 0) + 10, getMarkerpos _marker select 1, 0], [], 0, "Form"];
@@ -91,9 +87,6 @@ man5 addWeapon "SVD";
 	[_x] execVM "core\ai_fnc.sqf";
 } foreach units _group;
 
-// </editor-fold>
-
-// <editor-fold desc="Triggers">
 _trgw=createTrigger["EmptyDetector", _hillpos]; 
 _trgw setTriggerArea[_missionPlayerRadius,_missionPlayerRadius,0,false];
 _trgw setTriggerActivation["WEST","PRESENT",true];
@@ -108,7 +101,6 @@ _trgr=createTrigger["EmptyDetector", _hillpos];
 _trgr setTriggerArea[_missionPlayerRadius,_missionPlayerRadius,0,false];
 _trgr setTriggerActivation["GUER","PRESENT",true];
 _trgr setTriggerStatements["this", "PlayerPresent = 1", "PlayerPresent = 0"]; 
-// </editor-fold>
 
 diag_log format["WASTELAND SERVER - Mission Waiting to be Finished"];
 waitUntil
@@ -120,8 +112,7 @@ waitUntil
 
 _text2 = parseText format ["<t align='center' color='#00D60E' shadow='1' shadowColor='#000000' size='1.5'>Side Objective Complete</t><br/><t align='center' color='#FFCC33'>------------------------------</t><br/><br/><t align='center' color='#ffcc33' shadow='1' shadowColor='#000000'>Capture the <t color='#FFCC33'>Weapon Cache</t>, has been completed!</t><br/><br/><t align='center' color='#ffffff' shadow='1' shadowColor='#000000'>Re-Arm All your Kit!</t>",   _name, _picture, _color];
 [nil,nil,rHINT,_text2] call RE;
-diag_log format["WASTELAND SERVER - Mission Finished"];
 
+diag_log format["WASTELAND SERVER - Mission Finished"];
 deleteMarker _marker;
-diag_log format["WASTELAND SERVER - Execute New Mission"];
-execVM "server\core\missions\mainmission_selector.sqf";
+MissionRunning = false;

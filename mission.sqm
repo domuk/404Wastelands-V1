@@ -58,7 +58,7 @@ class Mission
 	randomSeed=9922807;
 	class Intel
 	{
-		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5c";
+		briefingName="Wasteland - Made By Tonic. Edited By 404Games v1.5d";
 		briefingDescription="Wasteland - A survival sandbox like DayZ without zombies.";
 		resistanceWest=0;
 		startWeather=0;

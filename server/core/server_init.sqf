@@ -29,9 +29,7 @@ CIVILIAN setFriend [RESISTANCE, 0];
 
 if (CVG_SideMissions == 1) then {
     diag_log format["WASTELAND SERVER - Execute Mission Selector"];
-    [] execVM "server\core\missions\mainmission_selector.sqf";
+    [] execVM "server\core\missions\missionState.sqf";
 };
-
-[nil,nil,"per",rSIDECHAT,"Enjoy the game."] call RE;
 
 LHD1 call BIS_EW_fnc_createLHD;

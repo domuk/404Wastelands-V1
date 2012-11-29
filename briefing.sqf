@@ -109,6 +109,17 @@ player createDiaryRecord["changelog",
 ]
 ];
 
+player createDiaryRecord["changelog",
+[
+"1.5d",
+"
+<br/>
+	[Added] - Mission Redundancy<br/>
+    [Fixed] - Scafolding Now Movable<br/>
+"
+]
+];
+
 player createDiaryRecord["404games",
 [
 "Credits",
@@ -163,7 +174,7 @@ player createDiaryRecord["404games",
 "
 <br/>
 	This server is provided and maintained by 404Games (www.404games.co.uk).<br/><br/>
-	Server Version: v1.5c<br/>
+	Server Version: v1.5d<br/>
 	Build Date: 22/11/2012 22:30:00
 "
 ]

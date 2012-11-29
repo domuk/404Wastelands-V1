@@ -66,7 +66,7 @@ class PlayersMenu
 	class PlayersMenu_activate1:RscButton
 	{
 		idc=-1;
-		text="Kick";
+		text="Slay";
 		action="[0] execVM ""core\admin\playerSelect.sqf"";";
 		x=0.75;
 		y=0.44;

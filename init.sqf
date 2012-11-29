@@ -3,7 +3,7 @@ X_Client = false;
 X_JIP = false;
 StartProgress = false;
 
-versionName = "v1.5c";
+versionName = "v1.5d";
 
 [] execVM "briefing.sqf"; //Load Briefing
 

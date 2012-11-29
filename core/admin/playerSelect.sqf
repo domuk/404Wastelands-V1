@@ -22,6 +22,7 @@ if (check == 0) then {exit;};
 _thistxt = ctrlText(19000);
 if (thiss == 0) then {
     target setVehicleInit format["if (name player == ""%1"") then {player setdamage 1; Endmission ""END1"";failMission ""END1"";forceEnd; deletevehicle player;};",name target];
+    player commandChat format["You have slayed %1",name target];
     processInitCommands;
     clearVehicleInit target;
 };
@@ -66,6 +67,7 @@ if (thiss == 1) then {
 };
 if (thiss == 2) then {
         target setVehicleInit format["if (name player == ""%2"") then {titleText [""%1"", ""plain""]; titleFadeOut 10;};",_thistxt,name target];
+        player commandChat format["You have warned %1",name target];
         processInitCommands;
         clearVehicleInit target;
 };
